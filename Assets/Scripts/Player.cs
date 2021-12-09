@@ -7,13 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public TextMesh text;
     public float mana;
     public float manaMax;
-    public float manaRate;
-
-    public GameObject textTarget;
+    public float manaReceiveRate;
     public bool giving;
+
+    public Text text;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +23,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float manaFlow = manaRate * Time.deltaTime;
+        float manaFlow = manaReceiveRate * Time.deltaTime;
 
         if(mana < manaMax && !giving)
         {

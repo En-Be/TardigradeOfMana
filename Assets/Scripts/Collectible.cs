@@ -6,10 +6,14 @@ public class Collectible : MonoBehaviour
 {
     public float manaAmount;
     public float life;
+    public bool dies;
 
     public void Start()
     {
-        StartCoroutine("Life");
+        if(dies)
+        {
+            StartCoroutine("Life");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

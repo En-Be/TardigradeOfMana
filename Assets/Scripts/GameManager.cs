@@ -5,21 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int friendlies;
+    // Variables
+
+    public Player player;
+    
+    public int hazardsToConvert;
+
+    public int hazardsConverted;
     public bool usingJoystick;
 
     // Start is called before the first frame update
+
     void Start()
     {
         
     }
 
     // Update is called once per frame
+
     void Update()
     {
-        if(friendlies == 3)
+        if(hazardsConverted == hazardsToConvert)
+        {
+            SceneManager.LoadScene("Win");
+        }
+
+        if(player.mana == player.manaMax)
         {
             SceneManager.LoadScene("Win");
         }
     }
+
 }
+

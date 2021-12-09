@@ -7,13 +7,16 @@ using UnityEngine.SceneManagement;
 public class Hazard : MonoBehaviour
 {
     public bool isHazard = true;
-
+    public int damage;
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("collision");
         if(isHazard && other.tag == "Player")
         {
-            SceneManager.LoadScene("Dead");
+            Player player = other.GetComponent<Player>();
+            player.mana -= damage;
+            // SceneManager.LoadScene("Dead");
         }
     }
 }

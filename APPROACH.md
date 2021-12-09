@@ -1,6 +1,6 @@
 # APPROACH
 
-Total time in development : 
+Total time in development : (to be calculated)
 
 ---
 ## Session 001
@@ -60,7 +60,7 @@ DONE
 - Make and untrack a Production folder for working files
 
 ## Session 004
-### 20.40
+### 30 mins
 
 TODO
 - Triangle placeholders
@@ -74,3 +74,18 @@ DONE
 - Triangle placeholder art
 - Removed unused joystick assets + scripts
 - Deleted unused scripts and scenes
+
+## Session 005
+### 21.20 - 
+
+TODO:
+- Make ring placeholder sprites
+- Encapsulate data
+- Make GameManager accessible to all
+
+DONE
+- Make ring placeholder sprites
+- Getter and setters for GameManager variables
+- Removed getters and setters, overcomplicating
+- Set up simple hazard
+- Set up mana collectible

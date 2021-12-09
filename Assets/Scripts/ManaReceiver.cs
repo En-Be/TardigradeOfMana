@@ -50,7 +50,7 @@ public class ManaReceiver : MonoBehaviour
             if (hazard.isHazard)
             {
                 emitter.Emit();
-                gameManager.friendlies +=1;
+                // gameManager.friendlies +=1;
             }
             hazard.isHazard = false;
         }
