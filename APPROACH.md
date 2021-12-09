@@ -76,7 +76,7 @@ DONE
 - Deleted unused scripts and scenes
 
 ## Session 005
-### 21.20 - 
+### 125 mins
 
 TODO:
 - Make ring placeholder sprites
@@ -89,3 +89,6 @@ DONE
 - Removed getters and setters, overcomplicating
 - Set up simple hazard
 - Set up mana collectible
+- Tried to push to phone, failed
+- Reimported joystick pack and put files back where they were
+- Pushed to phone
