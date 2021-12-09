@@ -47,3 +47,13 @@ DONE
 
 ---
 
+## Session 003
+### 35 mins
+
+TODO
+- untrack mp4s
+- round placeholder art (concave + convex)
+
+DONE
+- untrack mp4s
+- round placeholder art (concave + convex)
