@@ -57,3 +57,20 @@ TODO
 DONE
 - untrack mp4s
 - round placeholder art (concave + convex)
+- Make and untrack a Production folder for working files
+
+## Session 004
+### 20.40
+
+TODO
+- Triangle placeholders
+- Refactor
+    - Delete unused scripts
+    - Encapsulate data
+    - Make GameManager accessible to all
+    - Remove unused joystick assets + scripts
+
+DONE
+- Triangle placeholder art
+- Removed unused joystick assets + scripts
+- Deleted unused scripts and scenes
