@@ -59,6 +59,8 @@ DONE
 - round placeholder art (concave + convex)
 - Make and untrack a Production folder for working files
 
+---
+
 ## Session 004
 ### 30 mins
 
@@ -74,6 +76,8 @@ DONE
 - Triangle placeholder art
 - Removed unused joystick assets + scripts
 - Deleted unused scripts and scenes
+
+---
 
 ## Session 005
 ### 125 mins
@@ -92,3 +96,25 @@ DONE
 - Tried to push to phone, failed
 - Reimported joystick pack and put files back where they were
 - Pushed to phone
+
+![007](WIP/007.gif)
+
+---
+
+## Session 006
+### 70 mins
+
+TODO
+- Add agent to scene
+- Refactor mana receiver
+- Refactor mana giver
+
+DONE
+- Add agent to scene
+- Make agent mana text
+- Set hazard damage and agent manaMax
+- Added a delay of a second when winning
+- Added multitouch back to joystick script
+- Pushed to phone
+
+![008](WIP/008.gif)

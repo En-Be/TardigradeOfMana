@@ -9,19 +9,17 @@ public class ManaReceiver : MonoBehaviour
     public float mana;
     public float manaMax;
     public float manaRate;
-    public GameObject textTarget;
-    public TextMesh text;
     public bool getting = false;
     public Player player;
-    public Sprite sprite;
+    public Sprite[] sprite;
     public SpriteRenderer rend;
-    public ManaEmitter emitter;
+
+    public Text text;
 
     // Start is called before the first frame update
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
-        emitter = GetComponent<ManaEmitter>();
     }
 
     // Update is called once per frame
@@ -45,18 +43,18 @@ public class ManaReceiver : MonoBehaviour
 
         if(mana == manaMax)
         {
-            rend.sprite = sprite;
+            rend.sprite = sprite[1];
             Hazard hazard = GetComponent<Hazard>();
             if (hazard.isHazard)
             {
-                emitter.Emit();
-                // gameManager.friendlies +=1;
+                // emitter.Emit();
+                gameManager.hazardsConverted +=1;
             }
             hazard.isHazard = false;
         }
 
         mana = Mathf.Clamp(mana, 0, manaMax);
-        text.text = mana.ToString("F0");
+        text.text = $"{mana.ToString("F0")} of {manaMax}";
     }
 
     public void GetMana()
@@ -64,14 +62,12 @@ public class ManaReceiver : MonoBehaviour
         if(Input.touches.Length == 1 && !gameManager.usingJoystick)
         {
             Debug.Log("one touch on a hazard");
-            Debug.Log("get");
             player.giving = true;
             getting = true;
         }
         else if(Input.touches.Length == 2 && gameManager.usingJoystick)
         {
             Debug.Log("a touch each on a hazard and joystick");
-            Debug.Log("get");
             player.giving = true;
             getting = true;
         }

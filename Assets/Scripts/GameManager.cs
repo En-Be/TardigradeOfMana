@@ -10,8 +10,9 @@ public class GameManager : MonoBehaviour
     public Player player;
     
     public int hazardsToConvert;
-
     public int hazardsConverted;
+    public bool won;
+
     public bool usingJoystick;
 
     // Start is called before the first frame update
@@ -25,16 +26,18 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(hazardsConverted == hazardsToConvert)
+        if(hazardsConverted == hazardsToConvert && !won)
         {
-            SceneManager.LoadScene("Win");
+            StartCoroutine("Win");
+            won = true;
         }
 
-        if(player.mana == player.manaMax)
-        {
-            SceneManager.LoadScene("Win");
-        }
     }
 
+    private IEnumerator Win()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("Win");
+    }
 }
 

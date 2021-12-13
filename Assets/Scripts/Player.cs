@@ -36,6 +36,6 @@ public class Player : MonoBehaviour
         }
 
         mana = Mathf.Clamp(mana, 0, manaMax);
-        text.text = mana.ToString("F0");
+        text.text = $"{mana.ToString("F0")} of {manaMax}";
     }
 }
