@@ -2,6 +2,8 @@
 
 Total time in development : (to be calculated)
 
+![Moebius the G.O.A.T](WIP/lalala.jpg)
+
 ---
 ## Session 001
 ### 240 mins
@@ -118,3 +120,23 @@ DONE
 - Pushed to phone
 
 ![008](WIP/008.gif)
+
+---
+
+## Session 007
+### 60 mins
+
+TODO
+- README
+- Make camera prefab
+
+DONE
+- Camera prefab
+- Described idea in readme
+
+---
+
+TODO
+- User stories
+- Tech stack notes
+- Demo level design documents
