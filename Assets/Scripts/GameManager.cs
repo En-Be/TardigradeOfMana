@@ -15,11 +15,24 @@ public class GameManager : MonoBehaviour
 
     public bool usingJoystick;
 
-    // Start is called before the first frame update
+    public Animator anim;
 
-    void Start()
+    private static GameManager instance;
+
+    // Awake is called before start
+
+    void Awake()
     {
-        
+        instance = this;
+        FadeIn();
+    }
+
+    public static GameManager Instance
+    {
+        get
+        {
+            return instance;
+        }
     }
 
     // Update is called once per frame
@@ -34,10 +47,25 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void ExitingScene()
+    {
+        anim.SetTrigger("FadeOut");
+    }
+
     private IEnumerator Win()
     {
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("Win");
+    }
+
+    public void FadeIn()
+    {
+        anim.SetTrigger("FadeIn");
+    }
+
+    public void FadeOut()
+    {
+        anim.SetTrigger("FadeOut");
     }
 }
 

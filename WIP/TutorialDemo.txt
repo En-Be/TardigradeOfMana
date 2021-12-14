@@ -1,0 +1,14 @@
+Tutorial/ demo level
+
+- intro cutscene
+- player starts alone
+- use joystick to move around
+- avoid hazards
+- find little critter who needs help
+- activate mana fountain
+- collect mana
+- heal critter
+- critter follows as guide
+- avoid hazards
+- convert enemies to friendlies
+- convert boss enemy to friendly

@@ -36,3 +36,59 @@ Art:
 ![painting](WIP/painting.jpg)
 
 - Soundtrack that moves between ambient nature/acoustic (Natureboy Flako, Mort Garson) and chiptube/futurebass
+
+## User Stories
+
+```
+As a player
+so I can have a layered experience
+I want the events and mechanics to be metaphors for relationships
+```
+
+```
+As a player
+so I can experience a twist of a popular genre
+I want to be able to win by healing enemies
+```
+
+```
+As a player
+so I can enjoy looking at the game
+I want it to be digitally hand drawn and animated
+```
+    
+```
+As a player
+so I can feel a sense of discovery and progression
+I want a little world to save with upgrades to discover
+```
+
+```
+As a player
+so I can feel excited or calm
+I want to hear dynamic music and sound
+```
+
+```
+As a developer
+so I can engage players
+I want to create satisfying gameplay
+```
+
+```
+As a developer
+so I can take on a realistic sized project
+I want to make a polished demo to attract funding
+```
+
+```
+As a developer
+so I can make it available to many people
+I want to build it for multiple platforms
+```
+
+## Tech stack
+- Unity
+- VS Code
+- Github
+- Krita

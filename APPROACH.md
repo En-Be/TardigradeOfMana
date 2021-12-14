@@ -136,7 +136,55 @@ DONE
 
 ---
 
+## Session 008
+### 30 mins
+
 TODO
 - User stories
 - Tech stack notes
 - Demo level design documents
+
+DONE
+- User stories
+- Tech stack notes
+- Noted the general beats for tutorial/demo level
+
+---
+
+## Session 009
+### 35 mins
+
+TODO
+- Sketch demo map and annotate
+
+DONE
+- Sketched some scene layouts, focusing on introducing mechanics
+
+## Session 010
+### 30 mins
+
+TODO
+- Finish sketching demo level scenes
+- Start building demo scenes
+
+DONE
+- Simple layout sketched
+
+![p1](WIP/DemoSketchp1.jpg)
+
+![p2](WIP/DemoSketchp2.jpg)
+
+- Started a scene with a drawn wall
+
+## Session 011
+### 75 mins
+
+TODO
+- Add door collider and script to fade and load
+
+DONE
+- Add door object and collider
+- Add script to load scene
+- add fade animations
+- made gamemanager a singleton so scripts can access it without a reference
+- door triggres fadeout
