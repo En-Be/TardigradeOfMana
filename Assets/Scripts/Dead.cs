@@ -17,6 +17,6 @@ public class Dead : MonoBehaviour
     private IEnumerator WaitAndLoad()
     {
         yield return new WaitForSeconds(3.0f);
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene("Demo_001");
     }
 }

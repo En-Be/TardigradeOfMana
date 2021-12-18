@@ -17,14 +17,9 @@ public class Door : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            GameManager.Instance.ExitingScene();
-            StartCoroutine("Load");
+            GameManager.Instance.ExitingScene(levelToLoad);
         }
     }
 
-    private IEnumerator Load()
-    {
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(levelToLoad);
-    }
+
 }

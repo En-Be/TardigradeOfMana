@@ -47,9 +47,15 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void ExitingScene()
+    public void Dead()
+    {
+        SceneManager.LoadScene("Dead");
+    }
+
+    public void ExitingScene(string levelToLoad)
     {
         anim.SetTrigger("FadeOut");
+        StartCoroutine("Load", levelToLoad);
     }
 
     private IEnumerator Win()
@@ -66,6 +72,12 @@ public class GameManager : MonoBehaviour
     public void FadeOut()
     {
         anim.SetTrigger("FadeOut");
+    }
+
+    private IEnumerator Load(string levelToLoad)
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(levelToLoad);
     }
 }
 

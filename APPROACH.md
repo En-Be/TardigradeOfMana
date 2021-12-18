@@ -187,4 +187,53 @@ DONE
 - Add script to load scene
 - add fade animations
 - made gamemanager a singleton so scripts can access it without a reference
-- door triggres fadeout
+- door triggers fadeout
+
+![009](WIP/009.gif)
+
+---
+
+## Session 012
+### 50 mins
+
+TODO
+- Swap to singleton access instead of manager refs
+- Refactor
+- Make second demo scene
+
+DONE
+- Read about events, decided to stick with singleton
+- Moved some logic from Door and Player to GameManager
+- Made second scene
+
+![010](WIP/010.gif)
+
+---
+
+## Session 013
+### 60 mins
+
+TODO
+- Make scene 3
+
+DONE
+- Draw map
+- Added doors
+- Add spinner hazards with animation
+- Changed which scene dead scene loads
+- Built to phone, fade animations not working
+- Tried changing colour, no change
+- Made a test raw image, shows
+- Raw image with animator not working
+- Remade gobo object with rawimage and animator, working on device
+- Fixed animations and stopped being raycast target
+
+![011](WIP/011.gif)
+
+---
+
+TODO
+- Persist game manager as proper singleton created in any level
+- Persist player state
+- Make dead reload current scene
+- Make scenes reload at correct door

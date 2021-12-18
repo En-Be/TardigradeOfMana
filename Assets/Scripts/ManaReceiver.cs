@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ManaReceiver : MonoBehaviour
 {
-    public GameManager gameManager;
     public float mana;
     public float manaMax;
     public float manaRate;
@@ -25,10 +24,7 @@ public class ManaReceiver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(Input.touches.Length);
-
         float manaFlow = manaRate * Time.deltaTime;
-
 
         if(getting && mana < manaMax)
         {
@@ -48,7 +44,7 @@ public class ManaReceiver : MonoBehaviour
             if (hazard.isHazard)
             {
                 // emitter.Emit();
-                gameManager.hazardsConverted +=1;
+                GameManager.Instance.hazardsConverted +=1;
             }
             hazard.isHazard = false;
         }
@@ -59,13 +55,13 @@ public class ManaReceiver : MonoBehaviour
 
     public void GetMana()
     {
-        if(Input.touches.Length == 1 && !gameManager.usingJoystick)
+        if(Input.touches.Length == 1 && !GameManager.Instance.usingJoystick)
         {
             Debug.Log("one touch on a hazard");
             player.giving = true;
             getting = true;
         }
-        else if(Input.touches.Length == 2 && gameManager.usingJoystick)
+        else if(Input.touches.Length == 2 && GameManager.Instance.usingJoystick)
         {
             Debug.Log("a touch each on a hazard and joystick");
             player.giving = true;
