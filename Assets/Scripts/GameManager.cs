@@ -10,11 +10,10 @@ public class GameManager : MonoBehaviour
     // public Player player;
     // public LevelManager levelManager;
 
-    public int hazardsToConvert;
-    public int hazardsConverted;
-    public bool won;
-
     public bool usingJoystick;
+
+    public string previousLevel;
+    public string currentLevel;
 
     private static GameManager instance;
 
@@ -32,6 +31,8 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+
+        currentLevel = SceneManager.GetActiveScene().name;
     }
 
     public static GameManager Instance
@@ -42,23 +43,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // void OnEnable()
-    // {
-    //     SceneManager.sceneLoaded += OnSceneLoaded;
-    // }
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
-    // void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    // {
-    //     Debug.Log("OnSceneLoaded: " + scene.name);
-    //     FindManagers();
-    //     LevelManager.Instance.GameSaysHi();
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        previousLevel = currentLevel;
+        currentLevel = scene.name;
+        // FindManagers();
+    }
 
-    // }
-
-    // void OnDisable()
-    // {
-    //     SceneManager.sceneLoaded -= OnSceneLoaded;
-    // }
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
 
 
@@ -67,11 +67,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(hazardsConverted == hazardsToConvert && !won)
-        {
-            StartCoroutine("Win");
-            won = true;
-        }
+
 
     }
 
@@ -88,15 +84,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Dead");
     }
-
-
-    private IEnumerator Win()
-    {
-        yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene("Win");
-    }
-
-
 
 }
 

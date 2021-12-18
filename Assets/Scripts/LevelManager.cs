@@ -9,15 +9,21 @@ public class LevelManager : MonoBehaviour
 
     public Player player;
     public Canvas canvas;
+    public CameraFollow cam;
 
+    public Transform[] spawnpoints;
+    public string[] spawnFrom;
+    
     public Animator anim;
+
+    public int hazardsToConvert;
+    public int hazardsConverted;
+    public bool won;
 
     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
-        anim = canvas.GetComponentInChildren<Animator>();
-        FadeIn();
     }
 
     public static LevelManager Instance
@@ -28,11 +34,26 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void ExitingScene(string levelToLoad)
+    void Start()
+    {
+        StartingLevel();
+    }
+
+    public void StartingLevel()
+    {
+        anim = canvas.GetComponentInChildren<Animator>();
+        FadeIn();
+        player.gameObject.transform.position = spawnpoints[System.Array.IndexOf(spawnFrom, GameManager.Instance.previousLevel)].position;
+        cam.SnapTo();
+    }
+
+    public void ExitingLevel(string levelToLoad)
     {
         FadeOut();
         StartCoroutine("Load", levelToLoad);
     }
+
+
 
     private IEnumerator Load(string levelToLoad)
     {
@@ -50,14 +71,22 @@ public class LevelManager : MonoBehaviour
         anim.SetTrigger("FadeOut");
     }
 
-    public void GameSaysHi()
-    {
-        Debug.Log("GameSaysHi");
-    }
-    
     // Update is called once per frame
     void Update()
+    {   
+        if(hazardsToConvert != 0)
+        {
+            if(hazardsConverted == hazardsToConvert && !won)
+            {
+                StartCoroutine("Win");
+                won = true;
+            }
+        }
+    }
+
+    private IEnumerator Win()
     {
-        
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("Win");
     }
 }

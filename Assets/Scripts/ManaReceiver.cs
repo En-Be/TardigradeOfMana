@@ -44,7 +44,7 @@ public class ManaReceiver : MonoBehaviour
             if (hazard.isHazard)
             {
                 // emitter.Emit();
-                GameManager.Instance.hazardsConverted +=1;
+                LevelManager.Instance.hazardsConverted +=1;
             }
             hazard.isHazard = false;
         }

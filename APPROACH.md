@@ -249,7 +249,26 @@ DONE
 
 ---
 
+## Session 015
+### 90 mins
+
 TODO
-- Persist player state
 - Make dead reload current scene
 - Make scenes reload at correct door
+
+DONE
+- Moved some logic from game to level managers
+- Dead loads scene died on
+- Added spawn points array to level manager
+- Added spawn from string array to level manager
+- Set player to spawn at door from previous level
+- Snap camera at scene start
+- Snap camera not working on level 2
+- Snap camera not working at all on android
+- Moved camera snap call to levelmanager, works
+
+---
+
+TODO
+- Reload at correct spawnpoint if died
+- Persist player state

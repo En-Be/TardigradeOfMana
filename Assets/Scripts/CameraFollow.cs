@@ -8,9 +8,13 @@ public class CameraFollow : MonoBehaviour
     public float smooth;
 
     // Start is called before the first frame update
-    void Start()
+    public void SnapTo()
     {
-        
+        Vector3 targetPos = target.position;
+        targetPos.z = -10;
+        Debug.Log(targetPos);
+        Debug.Log(gameObject.transform.position);
+        gameObject.transform.position = targetPos;
     }
 
     // Update is called once per frame
