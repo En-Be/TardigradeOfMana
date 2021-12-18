@@ -15,7 +15,8 @@ public class Hazard : MonoBehaviour
         if(isHazard && other.tag == "Player")
         {
             Player player = other.GetComponent<Player>();
-            player.mana -= damage;
+            // player.mana -= damage;
+            player.Damaged(damage);
         }
     }
 }

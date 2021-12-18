@@ -269,6 +269,34 @@ DONE
 
 ---
 
+## Session 016
+### 65 mins
+
 TODO
 - Reload at correct spawnpoint if died
 - Persist player state
+- Add take damage animation to player
+
+DONE
+- Spawn point persists if died
+- Damage animation
+- Player mana written to playerprefs at level exit and loaded on level enter
+- Bug
+
+## Session 017
+### 5.15
+
+TODO
+- Hunt the bug
+- Level 4
+
+DONE
+- Bug was saying there was no text object but there was. Removed and readded and it works again
+- Player pref not working on device
+- Installed logcat package to track log
+- Log show mana is being written to
+- Level 3 only shows correct mana
+- Some scenes had multiple payler scripts for an unknown reason 
+- Joystick not working on level 2
+- Joystick wasn't set in editor
+- Reset player mana at level 1

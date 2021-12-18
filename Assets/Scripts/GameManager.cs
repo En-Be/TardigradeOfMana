@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
         }
 
         currentLevel = SceneManager.GetActiveScene().name;
+        previousLevel = SceneManager.GetActiveScene().name;
     }
 
     public static GameManager Instance
@@ -46,12 +47,17 @@ public class GameManager : MonoBehaviour
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        PlayerPrefs.SetFloat("playerMana", 1);
+        Debug.Log("set pref to 1");
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        previousLevel = currentLevel;
-        currentLevel = scene.name;
+        if(scene.name != "Win" && scene.name != "Dead" && scene.name != currentLevel)
+        {
+            previousLevel = currentLevel;
+            currentLevel = scene.name;
+        }
         // FindManagers();
     }
 
@@ -67,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
+        Debug.Log($"Playerpref mana = {PlayerPrefs.GetFloat("playerMana")}");
 
     }
 

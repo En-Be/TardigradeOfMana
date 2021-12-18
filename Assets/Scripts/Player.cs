@@ -13,10 +13,12 @@ public class Player : MonoBehaviour
 
     public Text text;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,5 +38,11 @@ public class Player : MonoBehaviour
 
         mana = Mathf.Clamp(mana, 0, manaMax);
         text.text = $"{mana.ToString("F0")} of {manaMax}";
+    }
+
+    public void Damaged(float damage)
+    {
+        mana -= damage;
+        anim.SetTrigger("Damaged");
     }
 }

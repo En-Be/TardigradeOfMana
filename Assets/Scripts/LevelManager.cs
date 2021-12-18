@@ -44,6 +44,12 @@ public class LevelManager : MonoBehaviour
         anim = canvas.GetComponentInChildren<Animator>();
         FadeIn();
         player.gameObject.transform.position = spawnpoints[System.Array.IndexOf(spawnFrom, GameManager.Instance.previousLevel)].position;
+        // if(PlayerPrefs.GetFloat("playerMana") == 0)
+        // {
+        //     PlayerPrefs.SetFloat("playerMana", 1.0f);
+        // }
+
+        player.mana = PlayerPrefs.GetFloat("playerMana");
         cam.SnapTo();
     }
 
@@ -53,11 +59,10 @@ public class LevelManager : MonoBehaviour
         StartCoroutine("Load", levelToLoad);
     }
 
-
-
     private IEnumerator Load(string levelToLoad)
     {
         yield return new WaitForSeconds(0.5f);
+        SavePrefs();
         SceneManager.LoadScene(levelToLoad);
     }
 
@@ -74,6 +79,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
+        Debug.Log($"level player mana = {player.mana}");
         if(hazardsToConvert != 0)
         {
             if(hazardsConverted == hazardsToConvert && !won)
@@ -88,5 +94,10 @@ public class LevelManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("Win");
+    }
+
+    private void SavePrefs()
+    {
+        PlayerPrefs.SetFloat("playerMana", player.mana);
     }
 }

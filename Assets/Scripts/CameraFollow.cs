@@ -12,8 +12,6 @@ public class CameraFollow : MonoBehaviour
     {
         Vector3 targetPos = target.position;
         targetPos.z = -10;
-        Debug.Log(targetPos);
-        Debug.Log(gameObject.transform.position);
         gameObject.transform.position = targetPos;
     }
 
