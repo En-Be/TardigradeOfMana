@@ -232,8 +232,24 @@ DONE
 
 ---
 
+## Session 014
+### 110 minutes
+
 TODO
 - Persist game manager as proper singleton created in any level
+- make gamemanager find levelmanager (non-persistent)
+
+DONE
+- Made gamemanager a proper persistent singleton
+- Added a LevelManager to each scene
+- gamemanager finds levelmanager if one in scene, using a listener on scenemanager
+- made levelmanager static, point doors to that instead of gamemanager
+- commented out gamemanager logic for finding levelManager, incase needed for later
+- made level 3 finish load win screen
+
+---
+
+TODO
 - Persist player state
 - Make dead reload current scene
 - Make scenes reload at correct door

@@ -7,15 +7,14 @@ public class GameManager : MonoBehaviour
 {
     // Variables
 
-    public Player player;
-    
+    // public Player player;
+    // public LevelManager levelManager;
+
     public int hazardsToConvert;
     public int hazardsConverted;
     public bool won;
 
     public bool usingJoystick;
-
-    public Animator anim;
 
     private static GameManager instance;
 
@@ -23,8 +22,16 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
-        FadeIn();
+        DontDestroyOnLoad(this);
+
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
     }
 
     public static GameManager Instance
@@ -34,6 +41,27 @@ public class GameManager : MonoBehaviour
             return instance;
         }
     }
+
+    // void OnEnable()
+    // {
+    //     SceneManager.sceneLoaded += OnSceneLoaded;
+    // }
+
+    // void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    // {
+    //     Debug.Log("OnSceneLoaded: " + scene.name);
+    //     FindManagers();
+    //     LevelManager.Instance.GameSaysHi();
+
+    // }
+
+    // void OnDisable()
+    // {
+    //     SceneManager.sceneLoaded -= OnSceneLoaded;
+    // }
+
+
+
 
     // Update is called once per frame
 
@@ -47,16 +75,20 @@ public class GameManager : MonoBehaviour
 
     }
 
+    // private void FindManagers()
+    // {
+    //     GameObject l_Manager = GameObject.FindGameObjectWithTag("LevelManager");
+    //     if (l_Manager != null)
+    //     {
+    //         levelManager = l_Manager.GetComponent<LevelManager>();
+    //     }
+    // }
+
     public void Dead()
     {
         SceneManager.LoadScene("Dead");
     }
 
-    public void ExitingScene(string levelToLoad)
-    {
-        anim.SetTrigger("FadeOut");
-        StartCoroutine("Load", levelToLoad);
-    }
 
     private IEnumerator Win()
     {
@@ -64,20 +96,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Win");
     }
 
-    public void FadeIn()
-    {
-        anim.SetTrigger("FadeIn");
-    }
 
-    public void FadeOut()
-    {
-        anim.SetTrigger("FadeOut");
-    }
 
-    private IEnumerator Load(string levelToLoad)
-    {
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(levelToLoad);
-    }
 }
 

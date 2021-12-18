@@ -17,7 +17,7 @@ public class Door : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            GameManager.Instance.ExitingScene(levelToLoad);
+            LevelManager.Instance.ExitingScene(levelToLoad);
         }
     }
 
