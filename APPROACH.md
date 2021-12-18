@@ -284,7 +284,7 @@ DONE
 - Bug
 
 ## Session 017
-### 5.15
+### 80 mins
 
 TODO
 - Hunt the bug
