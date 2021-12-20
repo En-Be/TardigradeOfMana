@@ -79,7 +79,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        Debug.Log($"level player mana = {player.mana}");
+        // Debug.Log($"level player mana = {player.mana}");
         if(hazardsToConvert != 0)
         {
             if(hazardsConverted == hazardsToConvert && !won)

@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cfe83b3318d9241a4e04e9156f115a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Win
+  levelToLoad: Demo_004
 --- !u!61 &512348840
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1777,7 +1777,7 @@ PrefabInstance:
     - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
       propertyPath: spawnFrom.Array.data[2]
-      value: Win
+      value: Demo_004
       objectReference: {fileID: 0}
     - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}

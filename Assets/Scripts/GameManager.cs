@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         PlayerPrefs.SetFloat("playerMana", 1);
-        Debug.Log("set pref to 1");
+        // Debug.Log("set pref to 1");
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log($"Playerpref mana = {PlayerPrefs.GetFloat("playerMana")}");
+        // Debug.Log($"Playerpref mana = {PlayerPrefs.GetFloat("playerMana")}");
 
     }
 

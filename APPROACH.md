@@ -300,3 +300,23 @@ DONE
 - Joystick not working on level 2
 - Joystick wasn't set in editor
 - Reset player mana at level 1
+
+## Session 018
+### 65 mins
+
+TODO
+- Level 4
+    - Draw map
+    - Make scene
+    - Add fountain
+    - Add NPC (guide)
+    - Add dialogue system
+
+DONE
+- Level 4 map
+- Scene connected to others
+- Added fountain with emitter that shoots collectible particles in random direction
+- Particles have their state set my fountain
+- Particles self destruct
+
+![012](WIP/012.gif)
