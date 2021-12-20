@@ -10,15 +10,17 @@ public class LevelManager : MonoBehaviour
     public Player player;
     public Canvas canvas;
     public CameraFollow cam;
+    public DialogueUI dialogueUI;
+    public Animator anim;
 
     public Transform[] spawnpoints;
     public string[] spawnFrom;
     
-    public Animator anim;
 
     public int hazardsToConvert;
     public int hazardsConverted;
     public bool won;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -41,7 +43,9 @@ public class LevelManager : MonoBehaviour
 
     public void StartingLevel()
     {
-        anim = canvas.GetComponentInChildren<Animator>();
+        // anim = canvas.GetComponentInChildren<Animator>();
+        // dialogueUI = canvas.GetComponentInChildren<DialogueUI>();
+
         FadeIn();
         player.gameObject.transform.position = spawnpoints[System.Array.IndexOf(spawnFrom, GameManager.Instance.previousLevel)].position;
         // if(PlayerPrefs.GetFloat("playerMana") == 0)
@@ -99,5 +103,12 @@ public class LevelManager : MonoBehaviour
     private void SavePrefs()
     {
         PlayerPrefs.SetFloat("playerMana", player.mana);
+    }
+
+    public void ShowDialogue(DialogueObject dialogueObject)
+    {   
+        Debug.Log($"dialogueUI = {dialogueUI}");
+        Debug.Log($"dialogueobject = {dialogueObject}");
+        dialogueUI.ShowDialogue(dialogueObject);
     }
 }

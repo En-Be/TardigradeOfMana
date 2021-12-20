@@ -283,6 +283,8 @@ DONE
 - Player mana written to playerprefs at level exit and loaded on level enter
 - Bug
 
+---
+
 ## Session 017
 ### 80 mins
 
@@ -300,6 +302,8 @@ DONE
 - Joystick not working on level 2
 - Joystick wasn't set in editor
 - Reset player mana at level 1
+
+---
 
 ## Session 018
 ### 65 mins
@@ -321,6 +325,8 @@ DONE
 
 ![012](WIP/012.gif)
 
+---
+
 ## Session 019
 ### 50 mins
 
@@ -334,3 +340,32 @@ DONE
 - Added box image behind text
 
 ![013](WIP/013.gif)
+
+---
+
+## Session 020
+### 3.30
+
+TODO
+- Dialogue from characters
+
+DONE
+- Added a scriptableobject for dialogue which can be created from the menu, and a datadialogue folder
+- Dialogues are scrolled through and then the dialoguebox is closed
+- Dialogues are scrolled through when tapped on instead of with spacebar
+- Made a dialogue trigger area
+- Made collectibles only collectible by player
+- Player triggers dialogue
+- Stopped dialogue box retriggering if active
+- Fountain working on phone but dialogue getting not set to reference error
+- Dialogue worked for a minute then stopped
+- Doors on level 4 not working anymore
+- Assigned references in editor rather than using getcomponent, works on phone too
+- Changed canvas scaler options
+
+![014](WIP/014.gif)
+
+---
+
+TODO
+- Player flash when receiving mana

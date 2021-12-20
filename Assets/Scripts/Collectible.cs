@@ -18,12 +18,12 @@ public class Collectible : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("collect");
         if(other.gameObject.tag == "Player")
         {
+            Debug.Log("collect");
             other.GetComponent<Player>().mana += manaAmount;
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
     private IEnumerator Life()

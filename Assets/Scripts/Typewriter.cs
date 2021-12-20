@@ -7,16 +7,15 @@ public class Typewriter : MonoBehaviour
 {
     public float speed;
 
-    public void Run(string textToType, TMP_Text textBox )
+    public Coroutine Run(string textToType, TMP_Text textBox )
     {
-        StartCoroutine(TypeText(textToType, textBox));
+        return StartCoroutine(TypeText(textToType, textBox));
     }
 
     private IEnumerator TypeText(string textToType, TMP_Text textBox)
     {
         textBox.text = string.Empty;
-        yield return new WaitForSeconds(1);
-        
+
         float t = 0;
         int charIndex = 0;
 
