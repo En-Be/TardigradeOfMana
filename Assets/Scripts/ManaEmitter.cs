@@ -25,7 +25,7 @@ public class ManaEmitter : MonoBehaviour
 
     private IEnumerator Emitting()
     {
-        Debug.Log("emit");
+        // Debug.Log("emit");
         GameObject manaBit = Instantiate(collectible, transform.position,transform.rotation);
         manaBit.GetComponent<Collectible>().manaAmount = emitAmount;
         manaBit.GetComponent<Collectible>().dies = true;

@@ -316,7 +316,21 @@ DONE
 - Level 4 map
 - Scene connected to others
 - Added fountain with emitter that shoots collectible particles in random direction
-- Particles have their state set my fountain
+- Particles have their state set by fountain
 - Particles self destruct
 
 ![012](WIP/012.gif)
+
+## Session 019
+### 50 mins
+
+TODO
+- Add NPC (guide)
+- Add dialogue system
+
+DONE
+- Added a TMPro ui element that is written to at start
+- Added typewriter effect
+- Added box image behind text
+
+![013](WIP/013.gif)
