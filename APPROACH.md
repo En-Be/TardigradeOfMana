@@ -344,7 +344,7 @@ DONE
 ---
 
 ## Session 020
-### 3.30
+### 145 mins
 
 TODO
 - Dialogue from characters
