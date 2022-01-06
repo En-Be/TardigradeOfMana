@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        PlayerPrefs.DeleteAll();
         PlayerPrefs.SetFloat("playerMana", 1);
         // Debug.Log("set pref to 1");
     }

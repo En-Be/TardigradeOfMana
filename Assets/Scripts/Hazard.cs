@@ -16,7 +16,7 @@ public class Hazard : MonoBehaviour
         {
             Player player = other.GetComponent<Player>();
             // player.mana -= damage;
-            player.Damaged(damage);
+            player.ManaAdjust(damage * -1);
         }
     }
 }

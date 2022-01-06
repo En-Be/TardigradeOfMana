@@ -19,11 +19,14 @@ public class Collectible : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Player")
-        {
-            Debug.Log("collect");
-            // other.GetComponent<Player>().mana += manaAmount;
-            other.GetComponent<Player>().Healed(manaAmount);
-            Destroy(gameObject);
+        {   
+            Player player = other.GetComponent<Player>();
+            if(player.mana != player.manaMax)
+            {
+                Debug.Log("collect");
+                player.ManaAdjust(manaAmount);
+                Destroy(gameObject);
+            }
         }
     }
 

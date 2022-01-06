@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
 
     private Animator anim;
 
+    public delegate void ManaChanged();
+    public static event ManaChanged AtMaxMana;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,27 +31,45 @@ public class Player : MonoBehaviour
 
         if(mana < manaMax && !giving)
         {
-            mana += manaFlow;
+            // ManaAdjust(manaFlow);
         }
         
-        if(mana < 1)
+    }
+
+    public void SetMana(float f)
+    {
+        mana = f;
+        text.text = $"{mana.ToString("F0")} of {manaMax}";
+    }
+
+    public void ManaAdjust(float f)
+    {
+        mana += f;
+
+        if(f > 0)
+        {
+            anim.SetTrigger("Healed");
+        }
+        else
+        {
+            anim.SetTrigger("Damaged");
+        }
+
+        mana = Mathf.Clamp(mana, 0, manaMax);
+
+        if(mana >= manaMax)
+        {
+            if(AtMaxMana != null)
+            {
+                AtMaxMana();
+            }
+        }
+        else if(mana <= 0)
         {
             GameManager.Instance.Dead();
         }
 
-        mana = Mathf.Clamp(mana, 0, manaMax);
         text.text = $"{mana.ToString("F0")} of {manaMax}";
-    }
 
-    public void Damaged(float damage)
-    {
-        mana -= damage;
-        anim.SetTrigger("Damaged");
-    }
-
-    public void Healed(float heal)
-    {
-        mana += heal;
-        anim.SetTrigger("Healed");
     }
 }

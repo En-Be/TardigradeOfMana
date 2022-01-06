@@ -5,9 +5,12 @@ using TMPro;
 public class DialogueUI : MonoBehaviour
 {
     public TMP_Text textBox;
-    [SerializeField] private GameObject dialogueBox;
+    public GameObject dialogueBox;
     public bool tapped;
     private Typewriter typewriter;
+
+    public delegate void DialogueDisplayed(int i);
+    public static event DialogueDisplayed DialogueFinished;
 
     void Start()
     {
@@ -15,27 +18,39 @@ public class DialogueUI : MonoBehaviour
         CloseDialogueBox();
     }
 
-    public void ShowDialogue(DialogueObject dialogueObject)
+    public void ShowDialogue(DialogueObject dialogueObject, int i)
     {
-        Debug.Log("gets to show dialogue");
+        CloseDialogueBox();
+        // Debug.Log("gets to show dialogue");
         if(!dialogueBox.activeInHierarchy)
         {
-            Debug.Log($"dialogue box = {dialogueBox}");
+            // Debug.Log($"dialogue box = {dialogueBox}");
             dialogueBox.SetActive(true);
-            StartCoroutine(StepThroughDialogue(dialogueObject));
+            StartCoroutine(StepThroughDialogue(dialogueObject, i));
         }
     }
 
-    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
+    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject, int i)
     {
         
         foreach (string dialogue in dialogueObject.Dialogue)
         {
             yield return typewriter.Run(dialogue, textBox);
             yield return new WaitUntil(() => tapped);
+            yield return new WaitForSeconds(0.5f);
             tapped = false;
         }
 
+        if(DialogueFinished != null)
+        {
+            DialogueFinished(i);
+        }
+
+        CloseDialogueBox();
+    }
+
+    public void StopDialogue()
+    {
         CloseDialogueBox();
     }
 

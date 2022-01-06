@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public DialogueObject dialogueObject;
-    public DialogueConditions dialogueConditions;
+    public DialogueObject[] dialogueObjects;
 
     void OnTriggerEnter2D(Collider2D other)
     {   
         if(other.gameObject.tag == "Player")
         {
-            if(dialogueConditions != null)
-            {
-                dialogueObject = dialogueConditions.ChooseDialogue(other.gameObject);
-            }
-
-            LevelManager.Instance.ShowDialogue(dialogueObject);
+            int i = LevelManager.Instance.currentStoryBeat;
+            LevelManager.Instance.ShowDialogue(dialogueObjects[i], i);
         }
     }
 
-    public void TriggerDialogue(int i)
+    public void TriggerDialogue()
     {
-        dialogueObject = dialogueConditions.ChooseDialogue(i);
-        LevelManager.Instance.ShowDialogue(dialogueObject);
+        int i = LevelManager.Instance.currentStoryBeat;
+        LevelManager.Instance.ShowDialogue(dialogueObjects[i], i);
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            LevelManager.Instance.StopDialogue();
+        }
     }
 }

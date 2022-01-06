@@ -382,7 +382,7 @@ DONE
 ---
 
 ## Session 022
-### 10.50 - 
+### 60 mins
 
 TODO
 - Add guide npc to revive
@@ -395,3 +395,60 @@ DONE
 - added barrier
 - added a wall to remove after guide is helped
 - added dialogue conditions script with method overloading for player/int
+
+---
+
+## Session 023
+### 160 mins
+
+TODO
+- Add story beat switch statement with level specifics
+- Turn dialogue trigger off after reviving guide
+- Turn barrier off after reviving guide
+- Have guide follow player after being revived
+- Hide mana counter until finding first fountain
+- Stop player receving mana if at max
+
+DONE
+- Removed dialogue conditionals
+- Made a currentStoryBeat int on levelmanager
+- dialoguetrigger refers to currentStoryBeat when choosing dialogue to display
+- Made a storyBeatTrigger script to put on relevant object
+- Switch statement on storyBeatTrigger that takes the current scene name
+- nested switch statement for each scene that takes currentStoryBeat
+- realised storytrigger has too many conditions, changing to individual scripts for each scene and beat
+
+---
+
+## Session 024
+### 80 mins
+
+TODO
+- Insert events and listeners to progress story beats
+    - Player gets max health
+    - Guide gets max health
+    - Last guide dialogue finished
+- Persist story state between levels
+
+
+DONE
+- Collectibles not collected if player is at max mana
+- Event and listener added for when player is at max
+- Dialogue closes if player leaves trigger
+- Calling dialogue box resets it before displaying
+- Player mana text resets properly
+- Story beat saved to prefs per level
+- half a second wait after typewriter effect finishes
+- Reset story state at awake
+- sped up stypewriter
+- end of dialogue triggers event
+
+![015](WIP/015.gif)
+
+---
+
+TODO
+- Persist story state between levels
+- Hide life counter until finding first fountain
+- Have guide follow player after being revived
+- Turn barrier off after reviving guide

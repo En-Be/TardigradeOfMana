@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public Canvas canvas;
     public CameraFollow cam;
     public DialogueUI dialogueUI;
+    public DialogueTrigger dialogueTrigger;
     public Animator anim;
 
     public Transform[] spawnpoints;
@@ -20,6 +21,7 @@ public class LevelManager : MonoBehaviour
     public int hazardsToConvert;
     public int hazardsConverted;
     public bool won;
+    public int currentStoryBeat;
 
 
     // Start is called before the first frame update
@@ -53,7 +55,8 @@ public class LevelManager : MonoBehaviour
         //     PlayerPrefs.SetFloat("playerMana", 1.0f);
         // }
 
-        player.mana = PlayerPrefs.GetFloat("playerMana");
+        LoadPrefs();
+        // player.mana = PlayerPrefs.GetFloat("playerMana");
         cam.SnapTo();
     }
 
@@ -103,12 +106,64 @@ public class LevelManager : MonoBehaviour
     private void SavePrefs()
     {
         PlayerPrefs.SetFloat("playerMana", player.mana);
+        PlayerPrefs.SetInt($"{SceneManager.GetActiveScene().name}_storyBeat", currentStoryBeat);
+    }
+    private void LoadPrefs()
+    {
+        player.SetMana(PlayerPrefs.GetFloat("playerMana"));
+        currentStoryBeat = PlayerPrefs.GetInt($"{SceneManager.GetActiveScene().name}_storyBeat");
     }
 
-    public void ShowDialogue(DialogueObject dialogueObject)
+    public void ShowDialogue(DialogueObject dialogueObject, int i)
     {   
-        Debug.Log($"dialogueUI = {dialogueUI}");
-        Debug.Log($"dialogueobject = {dialogueObject}");
-        dialogueUI.ShowDialogue(dialogueObject);
+        // Debug.Log($"dialogueUI = {dialogueUI}");
+        // Debug.Log($"dialogueobject = {dialogueObject}");
+        dialogueUI.ShowDialogue(dialogueObject, i);
+    }
+
+    public void StopDialogue()
+    {
+        dialogueUI.StopDialogue();
+    }
+
+    public void StoryBeat(int i)
+    {   
+
+        // Debug.Log(i);
+        // Debug.Log(currentStoryBeat);
+
+        if(i <= currentStoryBeat)
+        {
+            return;
+        }
+        else
+        {
+            currentStoryBeat = i;
+        }
+
+        switch (SceneManager.GetActiveScene().name)
+        {
+
+
+            case "Demo_004":
+                switch(currentStoryBeat)
+                {
+                    case 2:
+                        dialogueTrigger.TriggerDialogue();
+                        break;
+                    
+                    case 3:
+                        Debug.Log("open the wall");
+                        break;
+
+                    default:
+                        break;
+                }
+                break;
+
+            default:
+                // print ("No story beat this level.");
+                break;
+        }
     }
 }

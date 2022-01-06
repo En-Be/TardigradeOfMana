@@ -13,12 +13,17 @@ public class ManaReceiver : MonoBehaviour
     public Sprite[] sprite;
     public SpriteRenderer rend;
 
+    public delegate void ManaChanged();
+    public static event ManaChanged AtMaxMana;
+
     // public Text text;
 
     // Start is called before the first frame update
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
     }
 
     // Update is called once per frame
@@ -29,7 +34,8 @@ public class ManaReceiver : MonoBehaviour
         if(getting && mana < manaMax)
         {
             mana += manaFlow;
-            player.mana -= manaFlow;
+            player.ManaAdjust(manaFlow * -1);
+            // player.mana -= manaFlow;
         }
 
         if(!getting && mana < manaMax && mana > 0)
@@ -37,10 +43,16 @@ public class ManaReceiver : MonoBehaviour
             mana -= manaFlow;
         }
 
-        if(mana == manaMax)
+        if(getting && mana == manaMax)
         {
             rend.sprite = sprite[1];
+            if(AtMaxMana != null)
+            {
+                AtMaxMana();
+            }
+
             Hazard hazard = GetComponent<Hazard>();
+            // Guide guide = GetComponent<Guide>();
             if (hazard != null)
             {   
                 if(hazard.isHazard)
@@ -51,6 +63,13 @@ public class ManaReceiver : MonoBehaviour
 
                 }
             }
+
+            // if(guide != null)
+            // {
+            //     LevelManager.Instance.StoryBeat();
+            //     guide.enabled = true;
+            //     this.enabled = false;
+            // }
         }
 
         mana = Mathf.Clamp(mana, 0, manaMax);
@@ -61,13 +80,13 @@ public class ManaReceiver : MonoBehaviour
     {
         if(Input.touches.Length == 1 && !GameManager.Instance.usingJoystick)
         {
-            Debug.Log("one touch on a hazard");
+            // Debug.Log("one touch on a hazard");
             player.giving = true;
             getting = true;
         }
         else if(Input.touches.Length == 2 && GameManager.Instance.usingJoystick)
         {
-            Debug.Log("a touch each on a hazard and joystick");
+            // Debug.Log("a touch each on a hazard and joystick");
             player.giving = true;
             getting = true;
         }
@@ -76,7 +95,7 @@ public class ManaReceiver : MonoBehaviour
 
     public void StopGettingMana()
     {
-        Debug.Log("stop");
+        // Debug.Log("stop");
         player.giving = false;
         getting = false;
     }
