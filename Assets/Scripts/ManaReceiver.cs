@@ -13,7 +13,7 @@ public class ManaReceiver : MonoBehaviour
     public Sprite[] sprite;
     public SpriteRenderer rend;
 
-    public Text text;
+    // public Text text;
 
     // Start is called before the first frame update
     void Start()
@@ -41,16 +41,20 @@ public class ManaReceiver : MonoBehaviour
         {
             rend.sprite = sprite[1];
             Hazard hazard = GetComponent<Hazard>();
-            if (hazard.isHazard)
-            {
-                // emitter.Emit();
-                LevelManager.Instance.hazardsConverted +=1;
+            if (hazard != null)
+            {   
+                if(hazard.isHazard)
+                {
+                    // emitter.Emit();
+                    LevelManager.Instance.hazardsConverted +=1;
+                    hazard.isHazard = false;
+
+                }
             }
-            hazard.isHazard = false;
         }
 
         mana = Mathf.Clamp(mana, 0, manaMax);
-        text.text = $"{mana.ToString("F0")} of {manaMax}";
+        // text.text = $"{mana.ToString("F0")} of {manaMax}";
     }
 
     public void GetMana()

@@ -367,5 +367,31 @@ DONE
 
 ---
 
+## Session 021
+### 30 mins
+
 TODO
 - Player flash when receiving mana
+- Add guide npc to revive on level 4
+
+DONE
+- Made a healed animation
+- Made a Healed method on player that updates mana and triggers animation
+- Drawn a new map for level 4
+
+---
+
+## Session 022
+### 10.50 - 
+
+TODO
+- Add guide npc to revive
+- Add barrier
+- Hide life counter until finding first fountain
+
+DONE
+- NPC guide receives mana
+- guide location has dialogue
+- added barrier
+- added a wall to remove after guide is helped
+- added dialogue conditions script with method overloading for player/int

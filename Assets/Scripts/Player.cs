@@ -45,4 +45,10 @@ public class Player : MonoBehaviour
         mana -= damage;
         anim.SetTrigger("Damaged");
     }
+
+    public void Healed(float heal)
+    {
+        mana += heal;
+        anim.SetTrigger("Healed");
+    }
 }

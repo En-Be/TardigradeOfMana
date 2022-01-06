@@ -21,7 +21,8 @@ public class Collectible : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             Debug.Log("collect");
-            other.GetComponent<Player>().mana += manaAmount;
+            // other.GetComponent<Player>().mana += manaAmount;
+            other.GetComponent<Player>().Healed(manaAmount);
             Destroy(gameObject);
         }
     }
