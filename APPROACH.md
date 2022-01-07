@@ -447,8 +447,27 @@ DONE
 
 ---
 
+## Session 24
+### 9.35 - 
+
 TODO
 - Persist story state between levels
-- Hide life counter until finding first fountain
 - Have guide follow player after being revived
+- Turn barrier off after reviving guide
+
+DONE
+- Made a transform orbiting the player
+- Set orbiter animation layer weight
+- Realigned fountain emitter
+- Levelmanager story beat enables guide
+- Guide moves towards orbiter
+- Guide moves smoothly to orbiter
+
+
+![016](WIP/016.gif)
+
+---
+
+TODO
+- Persist story state between levels
 - Turn barrier off after reviving guide

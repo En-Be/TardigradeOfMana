@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Guide : MonoBehaviour
 {
-    Transform target;
-
+    public Transform target;
+    public float speed;
+    private Vector3 velocity = Vector3.zero;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("guide is enabled");
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        transform.position = Vector3.SmoothDamp(transform.position, target.position, ref velocity, speed);
     }
 }

@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
     public DialogueUI dialogueUI;
     public DialogueTrigger dialogueTrigger;
     public Animator anim;
-
+    public GameObject guide;
     public Transform[] spawnpoints;
     public string[] spawnFrom;
     
@@ -150,6 +150,7 @@ public class LevelManager : MonoBehaviour
                 {
                     case 2:
                         dialogueTrigger.TriggerDialogue();
+                        guide.GetComponent<Guide>().enabled = true;
                         break;
                     
                     case 3:
