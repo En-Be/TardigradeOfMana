@@ -448,7 +448,7 @@ DONE
 ---
 
 ## Session 24
-### 9.35 - 
+### 60 mins
 
 TODO
 - Persist story state between levels
@@ -468,6 +468,20 @@ DONE
 
 ---
 
+## Session 25
+###  60 mins
+
 TODO
+- Refactor
+
+DONE
+- Modelling the classes for refactor
+
+![classes](WIP/mana.drawio.png)
+
+---
+
+TODO
+- Continue modelling the classes and control flow
 - Persist story state between levels
 - Turn barrier off after reviving guide
