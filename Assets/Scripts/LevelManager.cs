@@ -114,11 +114,11 @@ public class LevelManager : MonoBehaviour
         currentStoryBeat = PlayerPrefs.GetInt($"{SceneManager.GetActiveScene().name}_storyBeat");
     }
 
-    public void ShowDialogue(DialogueObject dialogueObject, int i)
+    public void ShowDialogue(DialogueObject dialogueObject)
     {   
         // Debug.Log($"dialogueUI = {dialogueUI}");
         // Debug.Log($"dialogueobject = {dialogueObject}");
-        dialogueUI.ShowDialogue(dialogueObject, i);
+        dialogueUI.ShowDialogue(dialogueObject);
     }
 
     public void StopDialogue()

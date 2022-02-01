@@ -18,7 +18,7 @@ public class DialogueUI : MonoBehaviour
         CloseDialogueBox();
     }
 
-    public void ShowDialogue(DialogueObject dialogueObject, int i)
+    public void ShowDialogue(DialogueObject dialogueObject)
     {
         CloseDialogueBox();
         // Debug.Log("gets to show dialogue");
@@ -26,11 +26,11 @@ public class DialogueUI : MonoBehaviour
         {
             // Debug.Log($"dialogue box = {dialogueBox}");
             dialogueBox.SetActive(true);
-            StartCoroutine(StepThroughDialogue(dialogueObject, i));
+            StartCoroutine(StepThroughDialogue(dialogueObject));
         }
     }
 
-    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject, int i)
+    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
         
         foreach (string dialogue in dialogueObject.Dialogue)
@@ -43,7 +43,7 @@ public class DialogueUI : MonoBehaviour
 
         if(DialogueFinished != null)
         {
-            DialogueFinished(i);
+            DialogueFinished(LevelManager.Instance.currentStoryBeat);
         }
 
         CloseDialogueBox();

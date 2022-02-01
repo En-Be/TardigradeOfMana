@@ -481,7 +481,18 @@ DONE
 
 ---
 
+## Session 026
+### 35 mins
+
 TODO
+- Test current build on phone
 - Continue modelling the classes and control flow
 - Persist story state between levels
 - Turn barrier off after reviving guide
+
+DONE
+- found Guide moves very slowly on android
+- Guide speed in android matches editor
+- found index array error for dialogue
+- removed unnecessary argument in dialogue method
+- added a try catch block for dialogue triggering

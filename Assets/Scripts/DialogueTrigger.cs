@@ -10,15 +10,23 @@ public class DialogueTrigger : MonoBehaviour
     {   
         if(other.gameObject.tag == "Player")
         {
-            int i = LevelManager.Instance.currentStoryBeat;
-            LevelManager.Instance.ShowDialogue(dialogueObjects[i], i);
+            // int i = LevelManager.Instance.currentStoryBeat;
+            // LevelManager.Instance.ShowDialogue(dialogueObjects[i], i);
+            TriggerDialogue();
         }
     }
 
     public void TriggerDialogue()
     {
         int i = LevelManager.Instance.currentStoryBeat;
-        LevelManager.Instance.ShowDialogue(dialogueObjects[i], i);
+        try
+        {
+            LevelManager.Instance.ShowDialogue(dialogueObjects[i]);
+        }
+        catch
+        {
+            Debug.Log("no more dialogue now");
+        }
     }
 
     public void OnTriggerExit2D(Collider2D other)
