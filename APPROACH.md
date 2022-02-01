@@ -496,3 +496,19 @@ DONE
 - found index array error for dialogue
 - removed unnecessary argument in dialogue method
 - added a try catch block for dialogue triggering
+
+---
+
+## Session 027
+### 55 mins
+
+TODO
+- Implement level events interface on individual scripts per level
+- Continue modelling the classes and control flow
+- Persist story state between levels
+- Turn barrier off after reviving guide
+
+DONE
+- Continue modelling the classes and control flow
+
+![classes](WIP/classModelling_02.drawio.png)
