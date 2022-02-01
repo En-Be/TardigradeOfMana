@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4857723368096856919}
   - component: {fileID: 1967505482}
   - component: {fileID: 1967505478}
-  - component: {fileID: 1967505483}
+  - component: {fileID: 7664238065933708219}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -157,7 +157,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1967505483
+--- !u!114 &7664238065933708219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,9 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a3518632156d944ae7207426cf00d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mana: 1
-  manaMax: 100
-  manaReceiveRate: 1
+  mana: 0
+  manaMax: 0
+  manaReceiveRate: 0
   giving: 0
   text: {fileID: 0}
 --- !u!1 &5944990464099024998

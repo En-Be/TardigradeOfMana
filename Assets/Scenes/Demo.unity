@@ -1960,11 +1960,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b75256146cf6fe240a95f4d77c5eea79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1967505483}
-  hazardsToConvert: 1
-  hazardsConverted: 0
-  won: 0
   usingJoystick: 0
+  previousLevel: 
+  currentLevel: 
 --- !u!4 &1608845512
 Transform:
   m_ObjectHideFlags: 0
@@ -2480,29 +2478,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4857723366171425566}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1967505480 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4857723368096856918, guid: 9244d41aba8b25c47a6847eadb6b7940,
-    type: 3}
-  m_PrefabInstance: {fileID: 4857723366171425566}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &1967505482
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967505477}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &1967505483
+--- !u!114 &1967505478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2511,14 +2487,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1967505477}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3a3518632156d944ae7207426cf00d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9aad12b208139394e9747916217538d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mana: 1
-  manaMax: 100
-  manaReceiveRate: 1
-  giving: 0
-  text: {fileID: 1908860016}
+  mana: {fileID: 0}
+  text: {fileID: 0}
+--- !u!114 &1967505479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967505477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f319946ba5a41c844a79eefa6a2de619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMana: 1
+  maxMana: 100
+  agent: {fileID: 0}
+--- !u!4 &1967505480 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4857723368096856918, guid: 9244d41aba8b25c47a6847eadb6b7940,
+    type: 3}
+  m_PrefabInstance: {fileID: 4857723366171425566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1975858020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3033,7 +3027,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7664238065933708219, guid: 9244d41aba8b25c47a6847eadb6b7940, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9244d41aba8b25c47a6847eadb6b7940, type: 3}
 --- !u!1001 &4948016910459457514
 PrefabInstance:
@@ -3051,7 +3046,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1967505483}
+      objectReference: {fileID: 0}
     - target: {fileID: 4948016911119528682, guid: ffcd6d96c8f6e704ebb6ef58d2f5b9f9,
         type: 3}
       propertyPath: text

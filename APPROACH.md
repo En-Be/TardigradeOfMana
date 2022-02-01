@@ -512,3 +512,34 @@ DONE
 - Continue modelling the classes and control flow
 
 ![classes](WIP/classModelling_02.drawio.png)
+
+---
+
+## Session 028
+### 120 mins
+
+TODO
+- Refactor mana
+- Create an agent class for mana holders to inherit from and have methods triggered by mana changes
+
+DONE
+- Created a mana script with properly accessed variables
+- Agent class inheriting from monobehaviour
+- playeragent class inheriting from agent
+- mana component looks for agent component on object
+- mana component throws exception if no agent component found
+- agent component looks for mana component on object
+- agent component throws exception if no agent component found
+- playeragent calls base start method before it's own
+- player agent gets animator component, throws exception if it can't find one
+- playervagent triggers heal/damage animations
+
+
+---
+
+TODO
+
+- Merge the mana and mana agent classes, inherit agents from it
+- Continue modelling the classes and control flow
+- Persist story state between levels
+- Turn barrier off after reviving guide
