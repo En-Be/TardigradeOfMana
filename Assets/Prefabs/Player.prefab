@@ -101,6 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
   speed: 50
+  spawnPoints: []
+  spawnFrom: []
+  cam: {fileID: 0}
 --- !u!50 &4857723368096856919
 Rigidbody2D:
   serializedVersion: 4
@@ -171,6 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMana: 100
   maxMana: 100
+  playerState: {fileID: 11400000, guid: 13ad59fc6be47034eab1e5a1cc24e4cc, type: 2}
   text: {fileID: 0}
 --- !u!1 &5944990464099024998
 GameObject:

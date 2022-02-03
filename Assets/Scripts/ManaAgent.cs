@@ -15,6 +15,10 @@ public class ManaAgent : MonoBehaviour
     {
         return currentMana;
     }
+    public void CurrentMana(float f)
+    {
+        currentMana = f;
+    }
 
     public void AdjustMana(float f) 
     {
@@ -36,6 +40,11 @@ public class ManaAgent : MonoBehaviour
     public float MaxMana()
     {
         return maxMana;
+    }
+
+    public void MaxMana(float f)
+    {
+        maxMana = f;
     }
     // public float ReceiveRate {get; set;}
     // public float LoseRate {get; set;}

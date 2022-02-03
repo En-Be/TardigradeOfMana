@@ -10,9 +10,6 @@ public class Win : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetFloat("playerMana", 1);
-        // GameManager.Instance.PreviousLevel = ("Demo_001");
-        // GameManager.Instance.CurrentLevel = ("Demo_001");
         coroutine = WaitAndLoad();
         StartCoroutine(coroutine);   
     }
@@ -20,7 +17,7 @@ public class Win : MonoBehaviour
     private IEnumerator WaitAndLoad()
     {
         yield return new WaitForSeconds(3.0f);
-        GameManager.Instance.Reset();
+        GameManager.Instance.ResetData();
         SceneManager.LoadScene("Demo_001");
     }
 }

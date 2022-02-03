@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public string CurrentLevel => currentLevel;
 
     [SerializeField] private GameStateObject gameState = null;
+    [SerializeField] private PlayerStateObject playerState = null;
 
     private static GameManager instance;
 
@@ -26,22 +27,25 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(this);
-
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
+        if(instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
+        else if(instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        
+        ResetData();
 
         currentLevel = SceneManager.GetActiveScene().name;
         previousLevel = SceneManager.GetActiveScene().name;
 
-        gameState.CurrentLevel = currentLevel;
-        gameState.PreviousLevel = previousLevel;
+
+        gameState.CurrentLevel(currentLevel);
+        gameState.PreviousLevel(previousLevel);
 
     }
 
@@ -56,9 +60,6 @@ public class GameManager : MonoBehaviour
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetFloat("playerMana", 1);
-        // Debug.Log("set pref to 1");
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -67,11 +68,8 @@ public class GameManager : MonoBehaviour
         {
             previousLevel = currentLevel;
             currentLevel = scene.name;
-            gameState.CurrentLevel = currentLevel;
-            gameState.PreviousLevel = previousLevel;
-            Debug.Log($"gamestate previous level is {gameState.PreviousLevel}");
-            Debug.Log($"gamestate current level is {gameState.CurrentLevel}");
-
+            gameState.CurrentLevel(currentLevel);
+            gameState.PreviousLevel(previousLevel);
         }
     }
 
@@ -96,10 +94,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Dead");
     }
 
-    public void Reset()
+    public void ResetData()
     {
-        gameState.CurrentLevel = "";
-        gameState.CurrentLevel = "";
+        gameState.Reset();
+        playerState.Reset();
     }
 
 }

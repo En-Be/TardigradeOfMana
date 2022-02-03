@@ -615,3 +615,28 @@ DONE
 - cleaned scene heirarchies and set spawn points
 - Player moves cam to it's spawn point
 - Tested on android
+
+---
+
+## Session 033
+### 70 mins
+
+TODO
+- Persist player state between levels using scriptable objects
+- Player state (mana and max mana) persist across levels
+- rewind player state to last load if died
+
+DONE
+- player state object written to at level close
+- player state and game state reset at game start
+- fixed game manager singleton logic
+- player state doesn't save when dying
+- tested on android
+- Placed gamemanager prefab in each level so far
+
+---
+
+- Canvas prefab
+- Persist guide + story state between levels using scriptable objects
+- Place guide at player (spawn on load level if following)
+- Turn barrier off after reviving guide
