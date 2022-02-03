@@ -2,26 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour
 {
     private static LevelManager instance;
 
-//     public Player player;
-//     public Canvas canvas;
-//     public CameraFollow cam;
-    public DialogueUI dialogueUI;
-    public DialogueTrigger dialogueTrigger;
-//     public Animator anim;
-    public GameObject guide;
-//     public Transform[] spawnpoints;
-//     public string[] spawnFrom;
-    
+    [SerializeField] private CanvasManager canvas = null;
 
-    public int currentStoryBeat;
+    [SerializeField] private int currentStoryBeat = 0;
+
+    [SerializeField] UnityEvent StoryBeat0 = null;
+    [SerializeField] UnityEvent StoryBeat1 = null;
+    [SerializeField] UnityEvent StoryBeat2 = null;
+    [SerializeField] UnityEvent StoryBeat3 = null;
+    [SerializeField] UnityEvent StoryBeat4 = null;
 
 
-//     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
@@ -35,31 +32,19 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-//     void Start()
-//     {
-//         StartingLevel();
-//     }
+    void Start()
+    {
 
-//     public void StartingLevel()
-//     {
-//         // anim = canvas.GetComponentInChildren<Animator>();
-//         // dialogueUI = canvas.GetComponentInChildren<DialogueUI>();
+    }
 
-//         FadeIn();
-//         player.gameObject.transform.position = spawnpoints[System.Array.IndexOf(spawnFrom, GameManager.Instance.previousLevel)].position;
-//         // if(PlayerPrefs.GetFloat("playerMana") == 0)
-//         // {
-//         //     PlayerPrefs.SetFloat("playerMana", 1.0f);
-//         // }
-
-//         LoadPrefs();
-//         // player.mana = PlayerPrefs.GetFloat("playerMana");
-//         cam.SnapTo();
-//     }
+    public int CurrentStoryBeat()
+    {
+        return currentStoryBeat;
+    }
 
     public void ExitingLevel(string levelToLoad)
     {
-        // FadeOut();
+        FadeOut();
         StartCoroutine("Load", levelToLoad);
     }
 
@@ -70,64 +55,23 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(levelToLoad);
     }
 
-//     public void FadeIn()
-//     {
-//         anim.SetTrigger("FadeIn");
-//     }
-
-//     public void FadeOut()
-//     {
-//         anim.SetTrigger("FadeOut");
-//     }
-
-//     // Update is called once per frame
-//     void Update()
-//     {   
-//         // Debug.Log($"level player mana = {player.mana}");
-//         if(hazardsToConvert != 0)
-//         {
-//             if(hazardsConverted == hazardsToConvert && !won)
-//             {
-//                 StartCoroutine("Win");
-//                 won = true;
-//             }
-//         }
-//     }
-
-//     private IEnumerator Win()
-//     {
-//         yield return new WaitForSeconds(1.0f);
-//         SceneManager.LoadScene("Win");
-//     }
+    public void FadeOut()
+    {
+        canvas.FadeOut();
+    }
 
 //     private void SavePrefs()
 //     {
-//         PlayerPrefs.SetFloat("playerMana", player.mana);
 //         PlayerPrefs.SetInt($"{SceneManager.GetActiveScene().name}_storyBeat", currentStoryBeat);
 //     }
 //     private void LoadPrefs()
 //     {
-//         player.SetMana(PlayerPrefs.GetFloat("playerMana"));
 //         currentStoryBeat = PlayerPrefs.GetInt($"{SceneManager.GetActiveScene().name}_storyBeat");
 //     }
 
-    public void ShowDialogue(DialogueObject dialogueObject)
-    {   
-        // Debug.Log($"dialogueUI = {dialogueUI}");
-        // Debug.Log($"dialogueobject = {dialogueObject}");
-        dialogueUI.ShowDialogue(dialogueObject);
-    }
-
-    public void StopDialogue()
-    {
-        dialogueUI.StopDialogue();
-    }
 
     public void StoryBeat(int i)
     {   
-
-        // Debug.Log(i);
-        // Debug.Log(currentStoryBeat);
 
         if(i <= currentStoryBeat)
         {
@@ -138,29 +82,27 @@ public class LevelManager : MonoBehaviour
             currentStoryBeat = i;
         }
 
-        switch (SceneManager.GetActiveScene().name)
+        Debug.Log($"Current story beat is now {currentStoryBeat}");
+
+        switch (currentStoryBeat)
         {
-
-
-            case "Demo_004":
-                switch(currentStoryBeat)
-                {
-                    case 2:
-                        dialogueTrigger.TriggerDialogue();
-                        guide.GetComponent<Guide>().enabled = true;
-                        break;
-                    
-                    case 3:
-                        Debug.Log("open the wall");
-                        break;
-
-                    default:
-                        break;
-                }
+            case 0:
+                StoryBeat0.Invoke();
                 break;
-
+            case 1:
+                StoryBeat1.Invoke();
+                break;
+            case 2:
+                StoryBeat2.Invoke();
+                break;
+            case 3:
+                StoryBeat3.Invoke();
+                break;
+            case 4:
+                StoryBeat4.Invoke();
+                break;
             default:
-                // print ("No story beat this level.");
+                print ("No story beat this level.");
                 break;
         }
     }

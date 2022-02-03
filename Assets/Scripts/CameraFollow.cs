@@ -7,6 +7,11 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
     public float smooth;
 
+    void Start()
+    {
+        SnapTo();
+    }
+
     // Start is called before the first frame update
     public void SnapTo()
     {

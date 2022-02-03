@@ -18,6 +18,10 @@ public class PlayerAgent : ManaAgent
             throw new Exception("player has no animator");
         }
         DisplayMana();
+
+        //         PlayerPrefs.SetFloat("playerMana", player.mana);
+        //         player.SetMana(PlayerPrefs.GetFloat("playerMana"));
+
     }
 
     protected override void ManaAdjusted(float v)

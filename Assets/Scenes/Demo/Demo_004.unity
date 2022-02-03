@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 245176079}
   - component: {fileID: 245176078}
   - component: {fileID: 245176084}
+  - component: {fileID: 245176082}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -301,6 +302,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &245176082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245176077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5df77c2fa86dc4ca7a48fdf3625a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gobo: {fileID: 2040299816}
+  dialogueUI: {fileID: 1230193584}
 --- !u!222 &245176084
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -690,6 +705,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eb35cd23a90e2c2498c57a622e2c95e3, type: 2}
   - {fileID: 11400000, guid: 758fa12542342244194c24d206a90d18, type: 2}
   - {fileID: 11400000, guid: c00acd1638b96f64d9cc3adadf7f1c2f, type: 2}
+  canvas: {fileID: 245176082}
 --- !u!58 &1009832843
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1162,14 +1178,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
+      propertyPath: newevent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: events.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: StoryBeat0.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1967505483}
+      objectReference: {fileID: 0}
     - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 245176080}
+      objectReference: {fileID: 245176082}
     - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
       propertyPath: spawnpoints.Array.data[0]
@@ -1225,6 +1261,46 @@ PrefabInstance:
       propertyPath: guide
       value: 
       objectReference: {fileID: 1296279986}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: newevent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: newevent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: StoryBeat0.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: StoryBeat0.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: StoryBeat0.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: StoryBeat0.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3454912256138429791, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
       propertyPath: m_Name
@@ -2246,18 +2322,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4857723366171425566}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1967505483 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1967505483, guid: 9244d41aba8b25c47a6847eadb6b7940,
-    type: 3}
-  m_PrefabInstance: {fileID: 4857723366171425566}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3a3518632156d944ae7207426cf00d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1968059333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3454912256138429791, guid: a054d009162a8c740b61976bf4dcbfd6,
@@ -2623,6 +2687,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539455257191551724, guid: 9244d41aba8b25c47a6847eadb6b7940,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 1908860016}
+    - target: {fileID: 6539455257191551724, guid: 9244d41aba8b25c47a6847eadb6b7940,
+        type: 3}
+      propertyPath: currentMana
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9244d41aba8b25c47a6847eadb6b7940, type: 3}

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4948016911119528726}
   - component: {fileID: 4948016911119528724}
   - component: {fileID: 4948016911119528725}
-  - component: {fileID: 4948016911119528682}
   - component: {fileID: 728268033}
+  - component: {fileID: 416723971}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4948016911119528721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.34, y: -1.76, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3.3694, y: 3.3694, z: 1.6847}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -114,30 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHazard: 1
-  damage: 50
---- !u!114 &4948016911119528682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4948016911119528721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 843b37a31e05e5048b0bd5fee30eb943, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  mana: 0
-  manaMax: 60
-  manaRate: 5
-  getting: 0
-  player: {fileID: 0}
-  sprite:
-  - {fileID: 21300000, guid: e3a75bfe2a018ec4d97cdd48f43c50a5, type: 3}
-  - {fileID: 21300000, guid: fa85f39b3057f42468a2630bbe3bb73a, type: 3}
-  rend: {fileID: 0}
-  text: {fileID: 0}
+  damage: 100
 --- !u!114 &728268033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,8 +132,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4948016911119528682}
-          m_MethodName: GetMana
+        - m_Target: {fileID: 416723971}
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -170,8 +147,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4948016911119528682}
-          m_MethodName: StopGettingMana
+        - m_Target: {fileID: 416723971}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -181,3 +158,40 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 416723971}
+          m_MethodName: PointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &416723971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4948016911119528721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6a8694ba4d96c48bb8dfa1de79e74b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMana: 10
+  maxMana: 100
+  pressing: 0
+  receiveRate: 1
+  player: {fileID: 0}
+  sprite:
+  - {fileID: 21300000, guid: e3a75bfe2a018ec4d97cdd48f43c50a5, type: 3}
+  - {fileID: 21300000, guid: fa85f39b3057f42468a2630bbe3bb73a, type: 3}
+  rend: {fileID: 4948016911119528726}
+  hazard: {fileID: 4948016911119528725}

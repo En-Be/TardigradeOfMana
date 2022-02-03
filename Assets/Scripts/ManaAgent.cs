@@ -19,7 +19,6 @@ public class ManaAgent : MonoBehaviour
     public void AdjustMana(float f) 
     {
         currentMana += f;
-        ManaAdjusted(f);
 
         if(CheckIfMax())
         {
@@ -29,6 +28,8 @@ public class ManaAgent : MonoBehaviour
         {
             AtMinMana();
         }
+
+        ManaAdjusted(f);
     }
 
     // public float MaxMana {get; set;}

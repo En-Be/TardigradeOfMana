@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public DialogueObject[] dialogueObjects;
+    [SerializeField] private DialogueObject[] dialogueObjects = null;
+    [SerializeField] private CanvasManager canvas = null;
+
 
     void OnTriggerEnter2D(Collider2D other)
     {   
@@ -18,10 +20,13 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        int i = LevelManager.Instance.currentStoryBeat;
+        int i = LevelManager.Instance.CurrentStoryBeat();
+        Debug.Log($"current story beat = {i}");
+
         try
         {
-            LevelManager.Instance.ShowDialogue(dialogueObjects[i]);
+            canvas.ShowDialogue(dialogueObjects[i]);
+            // LevelManager.Instance.ShowDialogue(dialogueObjects[i]);
         }
         catch
         {
@@ -33,7 +38,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            LevelManager.Instance.StopDialogue();
+            // LevelManager.Instance.StopDialogue();
+            canvas.StopDialogue();
         }
     }
 }

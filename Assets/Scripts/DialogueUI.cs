@@ -43,7 +43,7 @@ public class DialogueUI : MonoBehaviour
 
         if(DialogueFinished != null)
         {
-            DialogueFinished(LevelManager.Instance.currentStoryBeat);
+            DialogueFinished(LevelManager.Instance.CurrentStoryBeat());
         }
 
         CloseDialogueBox();

@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 245176080}
   - component: {fileID: 245176079}
   - component: {fileID: 245176078}
+  - component: {fileID: 245176082}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -222,6 +223,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &245176082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245176077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5df77c2fa86dc4ca7a48fdf3625a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gobo: {fileID: 1913416702}
 --- !u!1 &316301984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,12 +1412,12 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 4857723366171425567}
+      objectReference: {fileID: 0}
     - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 245176080}
+      objectReference: {fileID: 245176082}
     - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
       propertyPath: spawnpoints.Array.data[0]
@@ -2908,17 +2922,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6539455257191551724, guid: 9244d41aba8b25c47a6847eadb6b7940,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 1908860016}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9244d41aba8b25c47a6847eadb6b7940, type: 3}
---- !u!114 &4857723366171425567 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1967505483, guid: 9244d41aba8b25c47a6847eadb6b7940,
-    type: 3}
-  m_PrefabInstance: {fileID: 4857723366171425566}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3a3518632156d944ae7207426cf00d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -576,5 +576,29 @@ DONE
 
 ---
 
-- Persist story state between levels
+## Session 031
+##  100 mins
+
+TODO
+- UI and canvas fades
+- Move dialogue behaviour to canvas manager
+- Level manager story event announcements
+
+DONE
+- Canvas triggers it's own fade in on each level so far
+- Level manager triggers canves fade out
+- Move dialogue behaviour to canvas manager
+- Dialogue trigger references canvas instead of level manager
+- reordered mana logic to make player display correct mana
+- edited player animations
+- reset unity as player running slow, fine now
+- clean level manager script
+- level manager has five story events that can have targets assigned in the editor
+
+
+---
+
+- Persist game + player + guide + story state between levels using scriptable objects
+- Place player at correct spawn point
+- Place guide at player
 - Turn barrier off after reviving guide
