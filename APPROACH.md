@@ -598,7 +598,20 @@ DONE
 
 ---
 
+## Session 032
+### 120 mins
+
+TODO
 - Persist game + player + guide + story state between levels using scriptable objects
 - Place player at correct spawn point
 - Place guide at player
 - Turn barrier off after reviving guide
+
+DONE
+- GameData scriptable object with previous and current level parameters
+- gameData not showing values in inspector, only in debug console, don't know how to fix this
+- player moves itself to spawnpoints 
+- win level resets game state (prev and current levels)
+- cleaned scene heirarchies and set spawn points
+- Player moves cam to it's spawn point
+- Tested on android

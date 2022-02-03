@@ -9,10 +9,9 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        SnapTo();
+        
     }
 
-    // Start is called before the first frame update
     public void SnapTo()
     {
         Vector3 targetPos = target.position;

@@ -12,8 +12,13 @@ public class GameManager : MonoBehaviour
 
     public bool usingJoystick;
 
-    public string previousLevel;
-    public string currentLevel;
+    [SerializeField] private string previousLevel;
+    [SerializeField] private string currentLevel;
+
+    public string PreviousLevel => previousLevel;
+    public string CurrentLevel => currentLevel;
+
+    [SerializeField] private GameStateObject gameState = null;
 
     private static GameManager instance;
 
@@ -34,6 +39,10 @@ public class GameManager : MonoBehaviour
 
         currentLevel = SceneManager.GetActiveScene().name;
         previousLevel = SceneManager.GetActiveScene().name;
+
+        gameState.CurrentLevel = currentLevel;
+        gameState.PreviousLevel = previousLevel;
+
     }
 
     public static GameManager Instance
@@ -58,8 +67,12 @@ public class GameManager : MonoBehaviour
         {
             previousLevel = currentLevel;
             currentLevel = scene.name;
+            gameState.CurrentLevel = currentLevel;
+            gameState.PreviousLevel = previousLevel;
+            Debug.Log($"gamestate previous level is {gameState.PreviousLevel}");
+            Debug.Log($"gamestate current level is {gameState.CurrentLevel}");
+
         }
-        // FindManagers();
     }
 
     void OnDisable()
@@ -74,22 +87,19 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // Debug.Log($"Playerpref mana = {PlayerPrefs.GetFloat("playerMana")}");
 
     }
 
-    // private void FindManagers()
-    // {
-    //     GameObject l_Manager = GameObject.FindGameObjectWithTag("LevelManager");
-    //     if (l_Manager != null)
-    //     {
-    //         levelManager = l_Manager.GetComponent<LevelManager>();
-    //     }
-    // }
 
     public void Dead()
     {
         SceneManager.LoadScene("Dead");
+    }
+
+    public void Reset()
+    {
+        gameState.CurrentLevel = "";
+        gameState.CurrentLevel = "";
     }
 
 }

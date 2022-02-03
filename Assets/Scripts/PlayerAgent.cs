@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerAgent : ManaAgent
 {
 
-    public Text text;
+    [SerializeField] private Text text = null;
     private Animator anim;
 
     protected override void Start()
