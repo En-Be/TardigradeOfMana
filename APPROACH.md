@@ -559,3 +559,22 @@ DONE
 - Made manual getters and setters for mana
 - manual getter for max mana (auto get/set was returning wrong value)
 - protected methods
+
+---
+
+## Session 030
+### 75 mins
+
+TODO
+- Refactor the mana exchange mechanic
+- Continue modelling the classes and control flow
+
+DONE
+- Refactored mana exchange mechanic using manaagents
+- Edited demo level and level manager script to test refactor so far on android
+- Single test level works as expected on android
+
+---
+
+- Persist story state between levels
+- Turn barrier off after reviving guide

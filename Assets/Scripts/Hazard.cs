@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Hazard : MonoBehaviour
 {
-    public bool isHazard = true;
-    public int damage;
+    [SerializeField] private bool isHazard = true;
+    [SerializeField] private int damage = 0;
     
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,5 +17,15 @@ public class Hazard : MonoBehaviour
             PlayerAgent player = other.GetComponent<PlayerAgent>();
             player.AdjustMana(damage * -1);
         }
+    }
+
+    public bool IsHazard()
+    {
+        return isHazard;
+    }
+
+    public void IsHazard(bool b)
+    {
+        isHazard = b;
     }
 }

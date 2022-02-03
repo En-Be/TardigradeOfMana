@@ -55,11 +55,11 @@ public class ManaReceiver : MonoBehaviour
             // Guide guide = GetComponent<Guide>();
             if (hazard != null)
             {   
-                if(hazard.isHazard)
+                if(hazard.IsHazard())
                 {
                     // emitter.Emit();
-                    LevelManager.Instance.hazardsConverted +=1;
-                    hazard.isHazard = false;
+                    // LevelManager.Instance.hazardsConverted +=1;
+                    hazard.IsHazard(false);
 
                 }
             }
