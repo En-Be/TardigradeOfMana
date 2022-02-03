@@ -532,10 +532,13 @@ DONE
 - agent component throws exception if no agent component found
 - playeragent calls base start method before it's own
 - player agent gets animator component, throws exception if it can't find one
-- playervagent triggers heal/damage animations
+- playeragent triggers heal/damage animations
 
 
 ---
+
+## Session 29
+### 85 mins
 
 TODO
 
@@ -543,3 +546,16 @@ TODO
 - Continue modelling the classes and control flow
 - Persist story state between levels
 - Turn barrier off after reviving guide
+
+DONE
+
+- Continue modelling the classes
+
+![classes](WIP/classModelling_03.drawio.png)
+
+- Merge the mana and mana agent classes, inherit agents from it
+- Collectibles work with player agent
+- Hazards work with player agent
+- Made manual getters and setters for mana
+- manual getter for max mana (auto get/set was returning wrong value)
+- protected methods

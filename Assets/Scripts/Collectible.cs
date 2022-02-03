@@ -12,7 +12,7 @@ public class Collectible : MonoBehaviour
     {
         if(dies)
         {
-            StartCoroutine("Life");
+            StartCoroutine("Live");
         }
     }
 
@@ -20,17 +20,17 @@ public class Collectible : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {   
-            Player player = other.GetComponent<Player>();
-            if(player.mana != player.manaMax)
+            PlayerAgent player = other.GetComponent<PlayerAgent>();
+            if(player.CurrentMana() != player.MaxMana())
             {
                 Debug.Log("collect");
-                player.ManaAdjust(manaAmount);
+                player.AdjustMana(manaAmount);
                 Destroy(gameObject);
             }
         }
     }
 
-    private IEnumerator Life()
+    private IEnumerator Live()
     {
         yield return new WaitForSeconds(life);
         Destroy(gameObject);

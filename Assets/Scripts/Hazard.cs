@@ -14,9 +14,8 @@ public class Hazard : MonoBehaviour
         Debug.Log("collision");
         if(isHazard && other.tag == "Player")
         {
-            Player player = other.GetComponent<Player>();
-            // player.mana -= damage;
-            player.ManaAdjust(damage * -1);
+            PlayerAgent player = other.GetComponent<PlayerAgent>();
+            player.AdjustMana(damage * -1);
         }
     }
 }

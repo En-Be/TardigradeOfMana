@@ -10,20 +10,22 @@ public class PlayerAgent : ManaAgent
     public Text text;
     private Animator anim;
 
-    public override void Start()
+    protected override void Start()
     {
-        base.Start();
-
         anim = GetComponent<Animator>();
         if(anim == null)
         {
             throw new Exception("player has no animator");
         }
+        DisplayMana();
     }
 
-    public override void ManaAdjusted(float v)
+    protected override void ManaAdjusted(float v)
     {
-        text.text = $"{mana.CurrentMana.ToString("F0")} of {mana.MaxMana}";
+        if(text != null)
+        {
+            DisplayMana();
+        }
 
         if(v > 0)
         {
@@ -37,13 +39,19 @@ public class PlayerAgent : ManaAgent
         }
     }
 
-    public override void AtMaxMana()
+    protected override void AtMaxMana()
     {
         Debug.Log("Player at max mana");
     }
 
-    public override void AtMinMana()
+    protected override void AtMinMana()
     {
         Debug.Log("Player at min mana");
+        GameManager.Instance.Dead();
+    }
+
+    private void DisplayMana()
+    {
+        text.text = $"{CurrentMana().ToString("F0")} of {MaxMana()}";
     }
 }
