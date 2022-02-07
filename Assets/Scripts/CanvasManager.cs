@@ -20,7 +20,7 @@ public class CanvasManager : MonoBehaviour
 
     public void FadeOut()
     {
-
+        gobo.SetTrigger("FadeOut");
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)

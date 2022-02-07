@@ -636,7 +636,29 @@ DONE
 
 ---
 
+## Session 034
+###  65 mins
+
+TODO
 - Canvas prefab
+- Guide agent script inheriting from mana agent
 - Persist guide + story state between levels using scriptable objects
 - Place guide at player (spawn on load level if following)
 - Turn barrier off after reviving guide
+
+DONE
+- Fade out trigger on canvas manager
+- Canvas prefab on each scene so far
+- Remodelling classes
+
+![classes](WIP/classModelling_04.drawio.png)
+
+- Guide friend component which inherits from Friend class
+
+---
+
+TODO
+- Persist guide + story state between levels using scriptable objects
+- Place guide at player (spawn on load level if following)
+- Turn barrier off after reviving guide
+- Bounce player away from hazard when damaged

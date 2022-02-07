@@ -11,6 +11,7 @@ public class NPCAgent : ManaAgent
     [SerializeField] private Sprite[] sprite = null;
     [SerializeField] private SpriteRenderer rend = null;
     [SerializeField] private Hazard hazard = null;
+    [SerializeField] private Friend friend = null;
 
     protected override void Start()
     {
@@ -37,12 +38,12 @@ public class NPCAgent : ManaAgent
     {
         if(Input.touches.Length == 1 && !GameManager.Instance.usingJoystick)
         {
-            Debug.Log("one touch on a hazard");
+            Debug.Log("one touch on an agent");
             pressing = true;
         }
         else if(Input.touches.Length == 2 && GameManager.Instance.usingJoystick)
         {
-            Debug.Log("a touch each on a hazard and joystick");
+            Debug.Log("a touch each on an agent and joystick");
             pressing = true;
         }
     }
@@ -57,9 +58,15 @@ public class NPCAgent : ManaAgent
     {
         Debug.Log("NPC at max mana");
         rend.sprite = sprite[1];
+
         if(hazard != null)
         {
             hazard.IsHazard(false);
+        }
+        
+        if(friend != null)
+        {
+            friend.IsFriend(true);
         }
     }
 }
