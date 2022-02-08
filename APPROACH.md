@@ -720,3 +720,35 @@ DONE
 - Android has 0 touches default. will just have to ignore in editor
 - Changed npc touches to accept any number if joystick isn't being used, or at least two if jostick is being used
 - Works as expected on android
+
+---
+
+## Session 038
+### 135 mins
+
+TODO
+- Trigger dialogue after reviving guide
+- Guide(s) adds to max mana
+
+
+DONE
+- Player at max mana triggers updates level manager 
+- Guide at max mana triggers Level manager triggers dialogue
+- Player data objects have a number of guides state
+- Guide number state on player increases when reviving guide
+- Player spawns as many guides as is set in state data
+- Levelstate string list which hold a list of guides to collect
+- level state saves which guides collected
+- gamemanager resets levelstate
+- realised don't need an array of guides to collect, will only be max one per level. Will need an array of mana agents though
+- changed guide collected state to single bool
+- added agenttoconvert arrays to level manager and level state objects
+- Guides are spawned at max mana
+
+---
+
+- Persist story (agentsConverted and dialogue events) state between levels using scriptable objects and events
+- Bounce player away from hazard when damaged
+- Change guide follow behaviour to approach and stop instead of orbit
+- Game state checks if continuing or new game
+- fix dialogue event

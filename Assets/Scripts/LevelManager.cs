@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using System;
 
 public class LevelManager : MonoBehaviour
 {
     private static LevelManager instance;
-
+    [SerializeField] private LevelStateObject levelState = null;
+    [SerializeField] private GameObject guide = null;
+    [SerializeField] private bool guideCollected = false;
+    [SerializeField] private GameObject[] agentsToConvert = null;
+    [SerializeField] private bool[] agentsConverted = null;
+    
     [SerializeField] private CanvasManager canvas = null;
 
     [SerializeField] private int currentStoryBeat = 0;
-
     [SerializeField] UnityEvent StoryBeat0 = null;
     [SerializeField] UnityEvent StoryBeat1 = null;
     [SerializeField] UnityEvent StoryBeat2 = null;
@@ -32,16 +37,36 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    void Start()
+    public LevelStateObject LevelState()
     {
-
+        return levelState;
     }
 
+    void Start()
+    {
+        LoadState();
+        if(guideCollected == true)
+        {
+            Destroy(guide);
+        }
+    }
 
+    private void LoadState()
+    {
+        guideCollected = levelState.GuideCollected();
+        agentsConverted = levelState.AgentsConverted();
+    }
+
+    private void SaveState()
+    {
+        levelState.GuideCollected(guideCollected);
+        levelState.AgentsConverted(agentsConverted);
+    }
 
     public void ExitingLevel(string levelToLoad)
     {
         FadeOut();
+        SaveState();
         StartCoroutine("Load", levelToLoad);
     }
 
@@ -56,8 +81,10 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(levelToLoad);
     }
 
-
-
+    public void CollectGuide()
+    {
+        guideCollected = true;
+    }
 
     public int CurrentStoryBeat()
     {

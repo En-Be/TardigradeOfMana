@@ -1556,6 +1556,12 @@ PrefabInstance:
       propertyPath: StoryBeat0.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: levelState
+      value: 
+      objectReference: {fileID: 11400000, guid: fe1bd6051ec892a44801183ceef948e9,
+        type: 2}
     - target: {fileID: 3454912256138429791, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
       propertyPath: m_Name

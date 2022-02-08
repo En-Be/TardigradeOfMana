@@ -65,7 +65,7 @@ public class NPCAgent : ManaAgent, IPointerEnterHandler, IPointerExitHandler
     protected override void AtMaxMana()
     {
         Debug.Log("NPC at max mana");
-
+        base.AtMaxMana();
         if(hazard != null)
         {
             hazard.IsHazard(false);
@@ -76,5 +76,10 @@ public class NPCAgent : ManaAgent, IPointerEnterHandler, IPointerExitHandler
             Debug.Log("friend isn't null");
             friend.IsFriend(true);
         }
+    }
+
+    public void SetPlayer(PlayerAgent p)
+    {
+        player = p;
     }
 }

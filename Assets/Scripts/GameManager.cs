@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     // Variables
 
     // public Player player;
-    // public LevelManager levelManager;
 
     public bool usingJoystick;
 
@@ -20,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameStateObject gameState = null;
     [SerializeField] private PlayerStateObject playerState = null;
+    [SerializeField] private LevelStateObject levelState = null;
 
     private static GameManager instance;
 
@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
             return;
         }
         
+        levelState = GameObject.FindWithTag("LevelManager").GetComponent<LevelManager>().LevelState();
+
         ResetData();
 
         currentLevel = SceneManager.GetActiveScene().name;
@@ -98,6 +100,7 @@ public class GameManager : MonoBehaviour
     {
         gameState.Reset();
         playerState.Reset();
+        levelState.Reset();
     }
 
 }

@@ -1390,6 +1390,12 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: levelState
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c69a91e127f8bb42853a9e404a886ae,
+        type: 2}
     - target: {fileID: 3454912256138429791, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
       propertyPath: m_Name

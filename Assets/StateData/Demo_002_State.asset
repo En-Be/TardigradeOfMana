@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec18dbd11e9d7c44829fd3931e16c2d, type: 3}
-  m_Name: gameState
-  m_EditorClassIdentifier: Assembly-CSharp::GameState
-  previousLevel: 
-  currentLevel: 
+  m_Script: {fileID: 11500000, guid: 71a34dad7c7d1c945b169b84c77c456c, type: 3}
+  m_Name: Demo_002_State
+  m_EditorClassIdentifier: 
+  guidesCollected: 00
+  agentsConverted: 

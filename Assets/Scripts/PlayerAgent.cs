@@ -9,9 +9,10 @@ public class PlayerAgent : ManaAgent
     [SerializeField] private PlayerStateObject playerState = null;
 
     [SerializeField] private Text text = null;
-    [SerializeField] private GameObject prefabGuide;
-    [SerializeField] private GameObject guide;
-    [SerializeField] private Transform guideTarget;
+    [SerializeField] private GameObject prefabGuide = null;
+    [SerializeField] private GameObject guide = null;
+    [SerializeField] private Transform guideTarget = null;
+    [SerializeField] private int numberOfGuides = 0;
 
     private Animator anim;
 
@@ -25,7 +26,7 @@ public class PlayerAgent : ManaAgent
 
         LoadState();
         DisplayMana();
-        SetGuide();
+        SetGuides();
     }
 
     protected override void ManaAdjusted(float v)
@@ -63,12 +64,14 @@ public class PlayerAgent : ManaAgent
     {
         playerState.CurrentMana(CurrentMana());
         playerState.MaxMana(MaxMana());
+        playerState.NumberOfGuides(numberOfGuides);
     }
 
     private void LoadState()
     {
         CurrentMana(playerState.CurrentMana());
         MaxMana(playerState.MaxMana());
+        numberOfGuides = (playerState.NumberOfGuides());
     }
 
     private void DisplayMana()
@@ -84,22 +87,33 @@ public class PlayerAgent : ManaAgent
         }
     }
 
-    private void SetGuide()
+    private void SetGuides()
     {
-        if(guide == null && playerState.HasGuide())
+        if(guide == null)
         {
-            guide = Instantiate(prefabGuide, transform.position,transform.rotation);
-            guide.GetComponent<GuideFriend>().SetTarget(guideTarget);
+            for(int i = 0; i < numberOfGuides; i++)
+            {
+                GameObject g = Instantiate(prefabGuide, transform.position,transform.rotation);
+                GuideFriend guide = g.GetComponent<GuideFriend>();
+                guide.SetTarget(guideTarget);
+                NPCAgent npc = g.GetComponent<NPCAgent>();
+                npc.SetPlayer(this);
+            }
         }
     }
 
-    public bool HasGuide()
+    public int NumberOfGuides()
     {
-        return playerState.HasGuide();
+        return numberOfGuides;
     }
 
-    public void HasGuide(bool b)
+    public void IncreaseNumberOfGuides()
     {
-        playerState.HasGuide(b);
+        numberOfGuides ++;
+    }
+
+    public void DecreaseNumberOfGuides()
+    {
+        numberOfGuides --;
     }
 }
