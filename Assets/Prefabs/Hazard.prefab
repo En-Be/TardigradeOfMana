@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6a8694ba4d96c48bb8dfa1de79e74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMana: 1
-  maxMana: 100
+  currentMana: 20
+  maxMana: 20
   AnnounceMaxMana:
     m_PersistentCalls:
       m_Calls: []

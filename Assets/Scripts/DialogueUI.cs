@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
+
 public class DialogueUI : MonoBehaviour
 {
     public TMP_Text textBox;
@@ -9,8 +11,10 @@ public class DialogueUI : MonoBehaviour
     public bool tapped;
     private Typewriter typewriter;
 
-    public delegate void DialogueDisplayed(int i);
-    public static event DialogueDisplayed DialogueFinished;
+    [SerializeField] private UnityEvent DialogueFinished = null;
+
+    // public delegate void DialogueDisplayed(int i);
+    // public static event DialogueDisplayed DialogueFinished;
 
     void Start()
     {
@@ -21,10 +25,8 @@ public class DialogueUI : MonoBehaviour
     public void ShowDialogue(DialogueObject dialogueObject)
     {
         CloseDialogueBox();
-        // Debug.Log("gets to show dialogue");
         if(!dialogueBox.activeInHierarchy)
         {
-            // Debug.Log($"dialogue box = {dialogueBox}");
             dialogueBox.SetActive(true);
             StartCoroutine(StepThroughDialogue(dialogueObject));
         }
@@ -41,10 +43,11 @@ public class DialogueUI : MonoBehaviour
             tapped = false;
         }
 
-        if(DialogueFinished != null)
-        {
-            DialogueFinished(LevelManager.Instance.CurrentStoryBeat());
-        }
+        DialogueFinished.Invoke();
+        // if(DialogueFinished != null)
+        // {
+        //     // DialogueFinished(LevelManager.Instance.CurrentStoryBeat());
+        // }
 
         CloseDialogueBox();
     }

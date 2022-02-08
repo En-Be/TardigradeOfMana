@@ -747,8 +747,30 @@ DONE
 
 ---
 
+## Session 039
+### 210 mins
+
+TODO
 - Persist story (agentsConverted and dialogue events) state between levels using scriptable objects and events
+- Guide(s) adds to max mana
 - Bounce player away from hazard when damaged
 - Change guide follow behaviour to approach and stop instead of orbit
 - Game state checks if continuing or new game
 - fix dialogue event
+
+DONE
+- Dialogue event fixed in level_004
+- Dialogue finishing progresses story beat
+- Improved story beat progression logic to catch skipping
+- Max mana increases with each guide collected
+- Level state (guides) not saving properly
+- Didn't change anything and they did work properly?!
+- Added ranodmness to guide location when following
+- Multiple guides spawn and follow properly
+- Game state not saving properly
+
+---
+
+- Fix game state save and load, only works sometimes
+- Game state checks if continuing or new game
+- Bounce player away from hazard when damaged

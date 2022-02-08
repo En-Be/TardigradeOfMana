@@ -66,9 +66,26 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        GameObject g = GameObject.FindWithTag("LevelManager");
+        if(g != null)
+        {
+            levelState = g.GetComponent<LevelManager>().LevelState();
+        }
+
+
+        if(gameState.PreviousLevel() == null)
+        {
+            gameState.PreviousLevel(scene.name);
+            gameState.CurrentLevel(scene.name);
+            currentLevel = scene.name;
+            previousLevel = scene.name;
+            Debug.Log(scene.name);
+        }
+
         if(scene.name != "Win" && scene.name != "Dead" && scene.name != currentLevel)
         {
             previousLevel = currentLevel;
+            Debug.Log($"previous level set to {previousLevel}");
             currentLevel = scene.name;
             gameState.CurrentLevel(currentLevel);
             gameState.PreviousLevel(previousLevel);

@@ -10,8 +10,7 @@ public class PlayerAgent : ManaAgent
 
     [SerializeField] private Text text = null;
     [SerializeField] private GameObject prefabGuide = null;
-    [SerializeField] private GameObject guide = null;
-    [SerializeField] private Transform guideTarget = null;
+    [SerializeField] private GameObject[] guides = null;
     [SerializeField] private int numberOfGuides = 0;
 
     private Animator anim;
@@ -89,17 +88,19 @@ public class PlayerAgent : ManaAgent
 
     private void SetGuides()
     {
-        if(guide == null)
-        {
+        // if(guides.Length == numberOfGuides)
+        // {
+            guides = new GameObject[numberOfGuides];
             for(int i = 0; i < numberOfGuides; i++)
             {
                 GameObject g = Instantiate(prefabGuide, transform.position,transform.rotation);
+                guides[i] = g;
                 GuideFriend guide = g.GetComponent<GuideFriend>();
-                guide.SetTarget(guideTarget);
-                NPCAgent npc = g.GetComponent<NPCAgent>();
-                npc.SetPlayer(this);
+                guide.SetTarget(transform);
+                // NPCAgent npc = g.GetComponent<NPCAgent>();
+                // npc.SetPlayer(this);
             }
-        }
+        // }
     }
 
     public int NumberOfGuides()
@@ -110,6 +111,9 @@ public class PlayerAgent : ManaAgent
     public void IncreaseNumberOfGuides()
     {
         numberOfGuides ++;
+        MaxMana(10 + (numberOfGuides * 10));
+        CurrentMana(MaxMana());
+        DisplayMana();
     }
 
     public void DecreaseNumberOfGuides()

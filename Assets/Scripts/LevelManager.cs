@@ -53,12 +53,14 @@ public class LevelManager : MonoBehaviour
 
     private void LoadState()
     {
+        currentStoryBeat = levelState.CurrentStoryBeat();
         guideCollected = levelState.GuideCollected();
         agentsConverted = levelState.AgentsConverted();
     }
 
     private void SaveState()
     {
+        levelState.CurrentStoryBeat(currentStoryBeat);
         levelState.GuideCollected(guideCollected);
         levelState.AgentsConverted(agentsConverted);
     }
@@ -94,13 +96,13 @@ public class LevelManager : MonoBehaviour
     public void StoryBeat(int i)
     {   
 
-        if(i <= currentStoryBeat)
+        if(i == currentStoryBeat + 1)
         {
-            return;
+            currentStoryBeat = i;
         }
         else
         {
-            currentStoryBeat = i;
+            return;
         }
 
         Debug.Log($"Current story beat is now {currentStoryBeat}");

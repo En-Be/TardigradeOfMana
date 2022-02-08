@@ -10,8 +10,7 @@ public class Win : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coroutine = WaitAndLoad();
-        StartCoroutine(coroutine);   
+        StartCoroutine("WaitAndLoad");   
     }
 
     private IEnumerator WaitAndLoad()

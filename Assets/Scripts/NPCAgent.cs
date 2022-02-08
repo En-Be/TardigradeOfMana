@@ -74,7 +74,9 @@ public class NPCAgent : ManaAgent, IPointerEnterHandler, IPointerExitHandler
         if(friend != null)
         {
             Debug.Log("friend isn't null");
-            friend.IsFriend(true);
+            // friend.IsFriend(true);
+            friend.enabled = true;
+            this.enabled = false;
         }
     }
 

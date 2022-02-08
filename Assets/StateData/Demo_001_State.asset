@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a34dad7c7d1c945b169b84c77c456c, type: 3}
   m_Name: Demo_001_State
   m_EditorClassIdentifier: 
-  guidesCollected: 00
-  agentsConverted: 
+  currentStoryBeat: 0
+  guideCollected: 0
+  agentsConverted: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
