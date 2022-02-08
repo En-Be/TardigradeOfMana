@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Friend : MonoBehaviour
 {
-    [SerializeField] private bool isFriend = true;
+    [SerializeField] protected bool isFriend = true;
 
-    public bool IsFriend()
+    public virtual bool IsFriend()
     {
         return isFriend;
     }
 
-    public void IsFriend(bool b)
+    public virtual void IsFriend(bool b)
     {
         isFriend = b;
+        Debug.Log($"isFriend in parent == {isFriend}");
     }
 }

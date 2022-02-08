@@ -37,10 +37,7 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    public int CurrentStoryBeat()
-    {
-        return currentStoryBeat;
-    }
+
 
     public void ExitingLevel(string levelToLoad)
     {
@@ -48,27 +45,24 @@ public class LevelManager : MonoBehaviour
         StartCoroutine("Load", levelToLoad);
     }
 
-    private IEnumerator Load(string levelToLoad)
-    {
-        yield return new WaitForSeconds(0.5f);
-        // SavePrefs();
-        SceneManager.LoadScene(levelToLoad);
-    }
-
     public void FadeOut()
     {
         canvas.FadeOut();
     }
 
-//     private void SavePrefs()
-//     {
-//         PlayerPrefs.SetInt($"{SceneManager.GetActiveScene().name}_storyBeat", currentStoryBeat);
-//     }
-//     private void LoadPrefs()
-//     {
-//         currentStoryBeat = PlayerPrefs.GetInt($"{SceneManager.GetActiveScene().name}_storyBeat");
-//     }
+    private IEnumerator Load(string levelToLoad)
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(levelToLoad);
+    }
 
+
+
+
+    public int CurrentStoryBeat()
+    {
+        return currentStoryBeat;
+    }
 
     public void StoryBeat(int i)
     {   

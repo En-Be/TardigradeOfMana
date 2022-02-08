@@ -657,8 +657,66 @@ DONE
 
 ---
 
+## Session 035
+### 50 mins
+
 TODO
 - Persist guide + story state between levels using scriptable objects
-- Place guide at player (spawn on load level if following)
+- Place guide at player
+- Player spawns guide if has guide is true
 - Turn barrier off after reviving guide
 - Bounce player away from hazard when damaged
+
+DONE
+- Guide friend component is set to follow player when npc agent component at max mana
+- Player data has a hasguide bool
+- Player references guide prefab
+- Player spawns guide at start if not already set to reference one in scene
+
+---
+
+## Session 036
+### 90 mins
+
+TODO
+- Player spawns guide if has guide is true
+- Persist story state between levels using scriptable objects and events
+- Turn barrier off after reviving guide
+- Bounce player away from hazard when damaged
+
+DONE
+- Guide spawns if there isn't one and player can
+- Mana agents have an event to announce when they hit max mana, recipients set in editor
+- Player agent has public methods to change has guide state
+- Resetting player state sets has guide to false
+- Guide sets sprite when becomes friend
+- Set guide sprite default sprite and renderer
+- Player at max mana on demo_004 updates levelmanager to story beat 1
+- Guide doesn't trigger on touch for some reason
+- Manaagent triggers moved from editor events to script
+- Guide only triggers if istrigger bool is changed during runtime?!
+- Guide sometimes triggers after changing levels
+- Very confused, can't find the bug, have reset editor, no change
+
+---
+
+## Session 037
+### 55 mins
+
+TODO
+- Solve npc trigger bug 
+
+DONE
+- Placed new guide prefab in different level, works
+- Made a hazard in a different level, registers touch
+- Placed NPC prefab in other level, works
+- Moved guide on demo_004 out of dialogue trigger, works now
+- Made a dialoguetrigger layer and assigned dialogue trigger to it
+- Told 2d physics raycaster on camera prefab to ignore dialoguetrigger layer
+- Guide can be pressed again, thank goodness that was tricky
+- Guide can be pressed through joystick, bug
+- Touches are reading as one even with no finger or mouse on screen (need to check on android)
+- Canvas text showing current touch length
+- Android has 0 touches default. will just have to ignore in editor
+- Changed npc touches to accept any number if joystick isn't being used, or at least two if jostick is being used
+- Works as expected on android

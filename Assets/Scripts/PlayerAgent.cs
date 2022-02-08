@@ -9,6 +9,10 @@ public class PlayerAgent : ManaAgent
     [SerializeField] private PlayerStateObject playerState = null;
 
     [SerializeField] private Text text = null;
+    [SerializeField] private GameObject prefabGuide;
+    [SerializeField] private GameObject guide;
+    [SerializeField] private Transform guideTarget;
+
     private Animator anim;
 
     protected override void Start()
@@ -21,6 +25,7 @@ public class PlayerAgent : ManaAgent
 
         LoadState();
         DisplayMana();
+        SetGuide();
     }
 
     protected override void ManaAdjusted(float v)
@@ -44,6 +49,7 @@ public class PlayerAgent : ManaAgent
 
     protected override void AtMaxMana()
     {
+        base.AtMaxMana();
         Debug.Log("Player at max mana");
     }
 
@@ -76,5 +82,24 @@ public class PlayerAgent : ManaAgent
         {
             SaveState();
         }
+    }
+
+    private void SetGuide()
+    {
+        if(guide == null && playerState.HasGuide())
+        {
+            guide = Instantiate(prefabGuide, transform.position,transform.rotation);
+            guide.GetComponent<GuideFriend>().SetTarget(guideTarget);
+        }
+    }
+
+    public bool HasGuide()
+    {
+        return playerState.HasGuide();
+    }
+
+    public void HasGuide(bool b)
+    {
+        playerState.HasGuide(b);
     }
 }

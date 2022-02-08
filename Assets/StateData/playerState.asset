@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016013268b373274ab81c5e2b95f4996, type: 3}
   m_Name: playerState
   m_EditorClassIdentifier: 
-  currentMana: 1
+  currentMana: 11
   maxMana: 100
+  hasGuide: 0

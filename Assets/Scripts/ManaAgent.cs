@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public class ManaAgent : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ManaAgent : MonoBehaviour
     // [SerializeField] private float receiveRate = 10;
     // [SerializeField] private float loseRate = 5;
 
+    [SerializeField] UnityEvent AnnounceMaxMana = null;
 
     public float CurrentMana() 
     {
@@ -82,7 +84,7 @@ public class ManaAgent : MonoBehaviour
 
     protected virtual void AtMaxMana()
     {
-
+        AnnounceMaxMana.Invoke();
     }
 
     protected virtual void AtMinMana()

@@ -176,6 +176,10 @@ MonoBehaviour:
   maxMana: 100
   playerState: {fileID: 11400000, guid: 13ad59fc6be47034eab1e5a1cc24e4cc, type: 2}
   text: {fileID: 0}
+  prefabGuide: {fileID: 6327474482924625221, guid: 45c2f1d191232e945b94ecb007248924,
+    type: 3}
+  guide: {fileID: 0}
+  guideTarget: {fileID: 6640996428500461299}
 --- !u!1 &5944990464099024998
 GameObject:
   m_ObjectHideFlags: 0
