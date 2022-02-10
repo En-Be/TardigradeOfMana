@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private void MoveToSpawnPoint()
     {
         int i = Array.IndexOf(spawnFrom, GameManager.Instance.PreviousLevel);
-        Debug.Log(i);
+        // Debug.Log(i);
         transform.position = spawnPoints[i].transform.position;
         cam.SnapTo();
     }

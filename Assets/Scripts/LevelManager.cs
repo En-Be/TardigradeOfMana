@@ -52,17 +52,26 @@ public class LevelManager : MonoBehaviour
     }
 
     private void LoadState()
-    {
+    {  
+        Debug.Log($"loading state of {levelState}");
         currentStoryBeat = levelState.CurrentStoryBeat();
+        // Debug.Log($"{levelState} story beat loaded as {levelState.CurrentStoryBeat()}");
         guideCollected = levelState.GuideCollected();
+        // Debug.Log($"{levelState} guide collected loaded as {levelState.GuideCollected()}");
         agentsConverted = levelState.AgentsConverted();
+        // Debug.Log($"{levelState} agents converted loaded as {levelState.AgentsConverted()}");
     }
 
     private void SaveState()
     {
+        // Debug.Log($"saving state of {levelState}");
         levelState.CurrentStoryBeat(currentStoryBeat);
+        // Debug.Log($"{levelState} story beat saved as {levelState.CurrentStoryBeat()}");
         levelState.GuideCollected(guideCollected);
+        // Debug.Log($"{levelState} guide collected saved as {levelState.GuideCollected()}");
         levelState.AgentsConverted(agentsConverted);
+        // Debug.Log($"{levelState} agents converted saved as {levelState.AgentsConverted()}");
+
     }
 
     public void ExitingLevel(string levelToLoad)

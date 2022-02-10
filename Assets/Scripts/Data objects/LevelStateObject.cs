@@ -11,6 +11,7 @@ public class LevelStateObject : ScriptableObject
     
     public void Reset()
     {
+        Debug.Log($"Reset called on {this}");
         currentStoryBeat = 0;
         guideCollected = false;
         agentsConverted = new bool[50];
@@ -24,6 +25,7 @@ public class LevelStateObject : ScriptableObject
     public void CurrentStoryBeat(int i)
     {
         currentStoryBeat = i;
+        Debug.Log($"Currentstorybeat changed on {this} to {currentStoryBeat}");
     }
 
     public bool GuideCollected()
@@ -34,6 +36,7 @@ public class LevelStateObject : ScriptableObject
     public void GuideCollected(bool b)
     {
         guideCollected = b;
+        Debug.Log($"GuideCollected changed on {this} to {guideCollected}");
     }
 
     public bool[] AgentsConverted()
@@ -44,5 +47,6 @@ public class LevelStateObject : ScriptableObject
     public void AgentsConverted(bool[] b)
     {
         agentsConverted = b;
+        Debug.Log($"AgentsCollected changed on {this} to {agentsConverted}");
     }
 }

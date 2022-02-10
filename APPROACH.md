@@ -771,6 +771,17 @@ DONE
 
 ---
 
+## Session 040
+### 6.20 -
+
+TODO
 - Fix game state save and load, only works sometimes
 - Game state checks if continuing or new game
 - Bounce player away from hazard when damaged
+
+DONE
+- Added a listener to scene unload in gamemanager
+- Gamemanager keeps strack of current and previous levels properly
+- Levelstate objects are being changed somewhere I can't see
+- Gamemanager doesn't track levels properly  
+- Fixed level tracking, rogue semicolon after an if parameter and before block

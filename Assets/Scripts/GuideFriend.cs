@@ -26,7 +26,7 @@ public class GuideFriend : Friend
         Vector3 editedTarget = new Vector3();
         editedTarget.x = (target.position.x + Random.Range(-2f, 2f));
         editedTarget.y = (target.position.y + Random.Range(-2f, 2f));
-        Debug.Log(editedTarget);
+        // Debug.Log(editedTarget);
         transform.position = Vector3.SmoothDamp(transform.position, editedTarget, ref velocity, speed);        
     } 
 

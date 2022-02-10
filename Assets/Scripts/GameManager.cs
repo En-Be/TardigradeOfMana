@@ -45,7 +45,6 @@ public class GameManager : MonoBehaviour
         currentLevel = SceneManager.GetActiveScene().name;
         previousLevel = SceneManager.GetActiveScene().name;
 
-
         gameState.CurrentLevel(currentLevel);
         gameState.PreviousLevel(previousLevel);
 
@@ -62,6 +61,7 @@ public class GameManager : MonoBehaviour
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -72,41 +72,42 @@ public class GameManager : MonoBehaviour
             levelState = g.GetComponent<LevelManager>().LevelState();
         }
 
-
-        if(gameState.PreviousLevel() == null)
+        if(scene.name != "Win" && scene.name != "Dead")
         {
-            gameState.PreviousLevel(scene.name);
-            gameState.CurrentLevel(scene.name);
-            currentLevel = scene.name;
-            previousLevel = scene.name;
-            Debug.Log(scene.name);
+            bool b = (currentLevel == SceneManager.GetActiveScene().name);
+            if(gameState.CurrentLevel() == null && gameState.PreviousLevel() == null)
+            {
+                previousLevel = SceneManager.GetActiveScene().name;
+            } 
+            else if(!b)
+            {
+                previousLevel = currentLevel;
+                gameState.PreviousLevel(previousLevel);
+
+            }
+            currentLevel = SceneManager.GetActiveScene().name;
+            gameState.CurrentLevel(currentLevel);
         }
 
-        if(scene.name != "Win" && scene.name != "Dead" && scene.name != currentLevel)
-        {
-            previousLevel = currentLevel;
-            Debug.Log($"previous level set to {previousLevel}");
-            currentLevel = scene.name;
+    }
+
+    void OnSceneUnloaded(Scene scene)
+    {
+        if(scene.name != "Win" && scene.name != "Dead")
+        {   
             gameState.CurrentLevel(currentLevel);
             gameState.PreviousLevel(previousLevel);
+            // Debug.Log("scene unloaded");
+            // Debug.Log($"Previous level saved as{gameState.PreviousLevel()}");
+            // Debug.Log($"Current level saved as {gameState.CurrentLevel()}");
         }
     }
 
     void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
     }
-
-
-
-
-    // Update is called once per frame
-
-    void Update()
-    {
-
-    }
-
 
     public void Dead()
     {
