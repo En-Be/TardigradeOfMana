@@ -1266,8 +1266,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelState
       value: 
-      objectReference: {fileID: 11400000, guid: fa9864c7507c71c4c8d1610d112be003,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
       propertyPath: guidesToCollect.Array.data[0]

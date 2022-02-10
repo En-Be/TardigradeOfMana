@@ -1863,8 +1863,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelState
       value: 
-      objectReference: {fileID: 11400000, guid: 157ccb7de57680a478125dd8fdf588f8,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
       propertyPath: StoryBeat1.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Thank you!
-  - I'll guide you out of here
-  - With your mana full you should make it past that barrier...
+  - I'll guide you out of here, let's go back and find my friend first.
+  - With both of us you should have enough mana to give to that barrier and get past
+    it :)

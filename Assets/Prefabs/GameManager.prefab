@@ -48,3 +48,9 @@ MonoBehaviour:
   currentLevel: 
   gameState: {fileID: 11400000, guid: a4c26132a722f2d4aa907b6eb4977c4d, type: 2}
   playerState: {fileID: 11400000, guid: 13ad59fc6be47034eab1e5a1cc24e4cc, type: 2}
+  levelStates:
+  - {fileID: 11400000, guid: 0191ea81495056541a265074471404a2, type: 2}
+  - {fileID: 11400000, guid: d886943f97c1bd34d914dc73b53399c0, type: 2}
+  - {fileID: 11400000, guid: 106916aa608009c42b48483346798b74, type: 2}
+  - {fileID: 11400000, guid: 578f2ea1b3417d04ba87dbfe364b8db1, type: 2}
+  currentLevelState: {fileID: 0}

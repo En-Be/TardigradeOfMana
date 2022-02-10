@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameStateObject gameState = null;
     [SerializeField] private PlayerStateObject playerState = null;
-    [SerializeField] private LevelStateObject levelState = null;
+    [SerializeField] private LevelStateObject[] levelStates = null;
+    [SerializeField] private LevelStateObject currentLevelState = null;
 
     private static GameManager instance;
 
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         
-        levelState = GameObject.FindWithTag("LevelManager").GetComponent<LevelManager>().LevelState();
+        // levelState = GameObject.FindWithTag("LevelManager").GetComponent<LevelManager>().LevelState();
 
         ResetData();
 
@@ -47,6 +49,8 @@ public class GameManager : MonoBehaviour
 
         gameState.CurrentLevel(currentLevel);
         gameState.PreviousLevel(previousLevel);
+
+        ChooseCurrentLevelState();
 
     }
 
@@ -66,11 +70,6 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        GameObject g = GameObject.FindWithTag("LevelManager");
-        if(g != null)
-        {
-            levelState = g.GetComponent<LevelManager>().LevelState();
-        }
 
         if(scene.name != "Win" && scene.name != "Dead")
         {
@@ -87,6 +86,15 @@ public class GameManager : MonoBehaviour
             }
             currentLevel = SceneManager.GetActiveScene().name;
             gameState.CurrentLevel(currentLevel);
+
+            
+            ChooseCurrentLevelState();
+        
+            GameObject g = GameObject.FindWithTag("LevelManager");
+            if(g != null)
+            {
+                g.GetComponent<LevelManager>().SetLevelState(currentLevelState);
+            }
         }
 
     }
@@ -118,7 +126,22 @@ public class GameManager : MonoBehaviour
     {
         gameState.Reset();
         playerState.Reset();
-        levelState.Reset();
+        foreach (LevelStateObject l in levelStates)
+        {
+            l.Reset();
+        }
+    }
+
+    private void ChooseCurrentLevelState()
+    {   
+        foreach (LevelStateObject l in levelStates)
+        {
+            Debug.Log(l.name);
+            if(l.name == currentLevel + "_state")
+            {
+                currentLevelState = l;
+            }
+        }
     }
 
 }

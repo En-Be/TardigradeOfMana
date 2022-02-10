@@ -772,7 +772,7 @@ DONE
 ---
 
 ## Session 040
-### 6.20 -
+### 240 mins
 
 TODO
 - Fix game state save and load, only works sometimes
@@ -785,3 +785,10 @@ DONE
 - Levelstate objects are being changed somewhere I can't see
 - Gamemanager doesn't track levels properly  
 - Fixed level tracking, rogue semicolon after an if parameter and before block
+- Tried deleting state data files and remaking, still doesn't work
+- Apparently scriptable objects don't save their data when they aren't serialized, so when their reference goes, the state goes
+- Gave the levelstateobjects to the gamemanager to hold so they are persisted, it works!
+- Testing on android, it works!
+- Updated dialogue to give better instruction
+
+![017](WIP/017.gif)

@@ -42,6 +42,11 @@ public class LevelManager : MonoBehaviour
         return levelState;
     }
 
+    public void SetLevelState(LevelStateObject l)
+    {
+        levelState = l;
+    }
+
     void Start()
     {
         LoadState();
