@@ -8,6 +8,7 @@ using System;
 public class LevelManager : MonoBehaviour
 {
     private static LevelManager instance;
+
     [SerializeField] private LevelStateObject levelState = null;
     [SerializeField] private GameObject guide = null;
     [SerializeField] private bool guideCollected = false;
@@ -100,6 +101,11 @@ public class LevelManager : MonoBehaviour
     public void CollectGuide()
     {
         guideCollected = true;
+    }
+
+    public void ConvertHazard()
+    {
+        Debug.Log("List a hazard as converted");
     }
 
     public int CurrentStoryBeat()

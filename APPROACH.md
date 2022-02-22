@@ -792,3 +792,22 @@ DONE
 - Updated dialogue to give better instruction
 
 ![017](WIP/017.gif)
+
+---
+
+## Session 040
+### 30 mins
+
+TODO
+- Bounce player away from hazard when damaged
+- Level remembers hazard to friend
+
+DONE
+- Hazard conversion triggers next story beat
+- New empty classes for friends/hazard
+
+---
+
+TODO
+- Bounce player away from hazard when damaged
+- Level remembers hazard to friend in list
