@@ -1422,6 +1422,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
+      propertyPath: agentsToConvert.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: agentsConverted.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 461288480}
@@ -1489,8 +1499,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelState
       value: 
-      objectReference: {fileID: 11400000, guid: fe1bd6051ec892a44801183ceef948e9,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}
       propertyPath: StoryBeat1.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1540,6 +1549,11 @@ PrefabInstance:
         type: 3}
       propertyPath: StoryBeat1.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454912256138429790, guid: a054d009162a8c740b61976bf4dcbfd6,
+        type: 3}
+      propertyPath: agentsToConvert.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3454912256138429791, guid: a054d009162a8c740b61976bf4dcbfd6,
         type: 3}

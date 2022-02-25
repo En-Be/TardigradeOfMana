@@ -16,8 +16,8 @@ public class NPCAgent : ManaAgent, IPointerEnterHandler, IPointerExitHandler
 
     protected override void Start()
     {
-        hazard = GetComponent<Hazard>();
-        friend = GetComponent<Friend>();
+        // hazard = GetComponent<Hazard>();
+        // friend = GetComponent<Friend>();
     }
 
     void Update()
@@ -62,6 +62,11 @@ public class NPCAgent : ManaAgent, IPointerEnterHandler, IPointerExitHandler
         pressing = false;
     }
 
+    public void Converted()
+    {
+        AtMaxMana();
+    }
+
     protected override void AtMaxMana()
     {
         Debug.Log("NPC at max mana");
@@ -77,6 +82,10 @@ public class NPCAgent : ManaAgent, IPointerEnterHandler, IPointerExitHandler
             // friend.IsFriend(true);
             friend.enabled = true;
             this.enabled = false;
+        }
+        else
+        {
+            Debug.Log("friend is null");
         }
     }
 

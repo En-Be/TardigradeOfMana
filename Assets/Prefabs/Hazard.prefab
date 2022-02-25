@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3930864014027844785}
   - component: {fileID: 3930864014027844784}
   - component: {fileID: -717070640839723305}
+  - component: {fileID: 5726164262926637481}
+  - component: {fileID: 7311091953537495542}
   m_Layer: 0
   m_Name: Hazard
   m_TagString: Untagged
@@ -47,7 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHazard: 1
-  damage: 20
+  damage: 1
+  col: {fileID: 5726164262926637481}
 --- !u!212 &3930864014027844785
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -150,5 +153,52 @@ MonoBehaviour:
   pressing: 0
   receiveRate: 0
   player: {fileID: 0}
-  hazard: {fileID: 0}
-  friend: {fileID: 0}
+  hazard: {fileID: 3930864014027844787}
+  friend: {fileID: 7311091953537495542}
+--- !u!60 &5726164262926637481
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3930864014027844789}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.03, y: 0.47}
+      - {x: -0.03, y: 0.47}
+      - {x: -0.5, y: -0.45}
+      - {x: -0.5, y: -0.5}
+      - {x: 0.5, y: -0.5}
+      - {x: 0.5, y: -0.44}
+      - {x: 0.06, y: 0.45999998}
+--- !u!114 &7311091953537495542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3930864014027844789}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50673f8162eaa9a409efbf1410118d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFriend: 1
+  sprites: []
+  rend: {fileID: 3930864014027844785}

@@ -8,13 +8,13 @@ public class LevelStateObject : ScriptableObject
     [SerializeField] private int currentStoryBeat = 0;
     [SerializeField] private bool guideCollected = false;
     [SerializeField] private bool[] agentsConverted = null;
-    
+
     public void Reset()
     {
         Debug.Log($"Reset called on {this}");
         currentStoryBeat = 0;
         guideCollected = false;
-        agentsConverted = new bool[50];
+        agentsConverted = null;
     }
 
     public int CurrentStoryBeat()

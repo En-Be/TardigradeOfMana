@@ -55,6 +55,15 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(guide);
         }
+
+        for(int i = 0; i < agentsConverted.Length; i++)
+        {
+            if(agentsConverted[i])
+            {
+                agentsToConvert[i].GetComponent<NPCAgent>().Converted();
+                Debug.Log("should be converting");
+            }
+        }
     }
 
     private void LoadState()
@@ -64,7 +73,14 @@ public class LevelManager : MonoBehaviour
         // Debug.Log($"{levelState} story beat loaded as {levelState.CurrentStoryBeat()}");
         guideCollected = levelState.GuideCollected();
         // Debug.Log($"{levelState} guide collected loaded as {levelState.GuideCollected()}");
-        agentsConverted = levelState.AgentsConverted();
+        if(levelState.AgentsConverted() == null)
+        {
+            levelState.AgentsConverted(new bool[agentsToConvert.Length]);
+        }
+        else
+        {
+            agentsConverted = levelState.AgentsConverted();
+        }
         // Debug.Log($"{levelState} agents converted loaded as {levelState.AgentsConverted()}");
     }
 
@@ -103,9 +119,14 @@ public class LevelManager : MonoBehaviour
         guideCollected = true;
     }
 
-    public void ConvertHazard()
+    public void ConvertHazard(GameObject g)
     {
         Debug.Log("List a hazard as converted");
+        int i = System.Array.IndexOf (agentsToConvert, g);
+        agentsConverted[i] = true;
+
+        // find g name in list
+        // make true
     }
 
     public int CurrentStoryBeat()

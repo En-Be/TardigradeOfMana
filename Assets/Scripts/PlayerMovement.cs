@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Joystick joystick = null;
     [SerializeField] private float speed = 0;
     private Rigidbody2D rigbod;
+    public bool isBouncing = false;
 
     [SerializeField] private GameObject[] spawnPoints = null;
     [SerializeField] private string[] spawnFrom = null;
@@ -27,7 +28,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rigbod.AddForce(new Vector2(joystick.Horizontal * speed, joystick.Vertical * speed), ForceMode2D.Force);
+        if(!isBouncing)
+        {
+            rigbod.AddForce(new Vector2(joystick.Horizontal * speed, joystick.Vertical * speed), ForceMode2D.Force);
+        }
+    }
+
+    public void Collided(Vector2 v)
+    {
+        isBouncing = true;
+        Debug.Log(v);
+        rigbod.AddForce(v, ForceMode2D.Impulse);
+        Invoke("StopBounce", 0.3f);
+    }
+
+    void StopBounce()
+    {
+        isBouncing = false;
     }
 
     private void MoveToSpawnPoint()

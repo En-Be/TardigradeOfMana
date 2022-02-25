@@ -808,6 +808,19 @@ DONE
 
 ---
 
+## Session 041
+### 160 mins
+
 TODO
 - Bounce player away from hazard when damaged
 - Level remembers hazard to friend in list
+
+DONE
+- Level remembers and sets which hazards are converted
+- Hazard collider sends vector to player movement which uses it to bounce away
+- Hazard was converted, not working on android anymore, working in editor
+- Getcomponent not working in Start on android
+- Setting component in editor works
+- Setting up levels needs a lot of settings, might be worth checking and throwing errors to help
+
+![018](WIP/018.gif)
