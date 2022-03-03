@@ -839,3 +839,27 @@ TODO
 DONE
 - Inherit from hazard class
 - Not sure inheritance and so many class types is necessary, started remodelling classes based on prefabs of components
+- Might not be worth refactoring at this stage, but prefabs will look something like the below if I need to:
+![classes](WIP/classModelling_05.drawio.png)
+
+---
+
+## Session 043
+### 6.25 - 7.50
+
+TODO
+- Add receiving/giving visual cues
+
+DONE
+- Made a manaAdjustment prefab with two animations, for giving and recieving
+- Manaagents instantiate growing or shrinking rings
+- Rings destroy themselves when animation finishes
+- Rings follow emitter
+
+![019](WIP/019.gif)
+
+---
+
+TODO
+- Throw errors on level setups
+- Rebuild levels 

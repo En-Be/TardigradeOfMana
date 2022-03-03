@@ -95,7 +95,7 @@ public class PlayerAgent : ManaAgent
             {
                 GameObject g = Instantiate(prefabGuide, transform.position,transform.rotation);
                 guides[i] = g;
-                GuideFriend guide = g.GetComponent<GuideFriend>();
+                Friend_Guide guide = g.GetComponent<Friend_Guide>();
                 guide.SetTarget(transform);
                 // NPCAgent npc = g.GetComponent<NPCAgent>();
                 // npc.SetPlayer(this);

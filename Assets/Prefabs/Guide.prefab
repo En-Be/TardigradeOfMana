@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFriend: 1
   target: {fileID: 0}
+  editedTarget: {x: 0, y: 0, z: 0}
   speed: 0.4
   sprites:
   - {fileID: 21300000, guid: b619c0bbcdbf97b44a81c829e39d2e51, type: 3}
@@ -145,6 +146,8 @@ MonoBehaviour:
   AnnounceMaxMana:
     m_PersistentCalls:
       m_Calls: []
+  manaAdjustmentRing: {fileID: 6173289641470257073, guid: a8ca2f01bf8025e449908a8320525857,
+    type: 3}
   pressing: 0
   receiveRate: 0.05
   player: {fileID: 0}

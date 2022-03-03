@@ -13,6 +13,9 @@ public class ManaAgent : MonoBehaviour
 
     [SerializeField] UnityEvent AnnounceMaxMana = null;
 
+    [SerializeField] private GameObject manaAdjustmentRing;
+    private bool ringEmitted = false;
+
     public float CurrentMana() 
     {
         return currentMana;
@@ -25,6 +28,24 @@ public class ManaAgent : MonoBehaviour
     public void AdjustMana(float f) 
     {
         currentMana += f;
+        
+        if(!ringEmitted)
+        {
+            GameObject visualAdjustment = Instantiate(manaAdjustmentRing, transform.position, transform.rotation);
+            visualAdjustment.GetComponent<ManaAdjustmentRing>().t = gameObject.transform;
+
+            if(f > 0)
+            {                
+                visualAdjustment.GetComponent<Animator>().SetTrigger("receive");
+            }
+            else
+            {
+                visualAdjustment.GetComponent<Animator>().SetTrigger("give");
+            }
+
+            ringEmitted = true;
+            StartCoroutine("RingDelay");
+        }
 
         if(CheckIfMax())
         {
@@ -50,6 +71,12 @@ public class ManaAgent : MonoBehaviour
     }
     // public float ReceiveRate {get; set;}
     // public float LoseRate {get; set;}
+
+    protected IEnumerator RingDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        ringEmitted = false;
+    }
 
     protected virtual void Start()
     {       

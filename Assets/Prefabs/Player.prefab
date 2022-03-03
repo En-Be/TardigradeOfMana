@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
   speed: 50
+  isBouncing: 0
   spawnPoints: []
   spawnFrom: []
   cam: {fileID: 0}
@@ -176,10 +177,11 @@ MonoBehaviour:
   AnnounceMaxMana:
     m_PersistentCalls:
       m_Calls: []
+  manaAdjustmentRing: {fileID: 6173289641470257073, guid: a8ca2f01bf8025e449908a8320525857,
+    type: 3}
   playerState: {fileID: 11400000, guid: 13ad59fc6be47034eab1e5a1cc24e4cc, type: 2}
   text: {fileID: 0}
   prefabGuide: {fileID: 6327474482924625221, guid: 45c2f1d191232e945b94ecb007248924,
     type: 3}
   guides: []
-  guideTarget: {fileID: 0}
   numberOfGuides: 0

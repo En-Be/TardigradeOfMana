@@ -336,7 +336,7 @@ PrefabInstance:
     - target: {fileID: -717070640839723305, guid: fcd16e4845d06624a89700537442fb2c,
         type: 3}
       propertyPath: receiveRate
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -717070640839723305, guid: fcd16e4845d06624a89700537442fb2c,
         type: 3}

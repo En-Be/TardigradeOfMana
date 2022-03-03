@@ -150,6 +150,8 @@ MonoBehaviour:
   AnnounceMaxMana:
     m_PersistentCalls:
       m_Calls: []
+  manaAdjustmentRing: {fileID: 6173289641470257073, guid: a8ca2f01bf8025e449908a8320525857,
+    type: 3}
   pressing: 0
   receiveRate: 0
   player: {fileID: 0}
