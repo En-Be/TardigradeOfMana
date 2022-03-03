@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuideFriend : Friend
+public class Friend_Guide : Friend
 {
     [SerializeField] private Transform target = null;
     [SerializeField] private Vector3 editedTarget;

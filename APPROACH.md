@@ -824,3 +824,18 @@ DONE
 - Setting up levels needs a lot of settings, might be worth checking and throwing errors to help
 
 ![018](WIP/018.gif)
+
+---
+
+## Session 042
+### 50 mins
+
+TODO
+- Inherit from hazard class
+- Add receiving/giving visual cues
+- Throw errors on level setups
+- Rebuild levels
+
+DONE
+- Inherit from hazard class
+- Not sure inheritance and so many class types is necessary, started remodelling classes based on prefabs of components
