@@ -845,7 +845,7 @@ DONE
 ---
 
 ## Session 043
-### 6.25 - 7.50
+### 85 mins
 
 TODO
 - Add receiving/giving visual cues
@@ -860,6 +860,14 @@ DONE
 
 ---
 
+## Session 044
+### 35 mins
+
 TODO
-- Throw errors on level setups
-- Rebuild levels 
+- Redesign demo levels
+
+DONE
+
+![boards](WIP/demo_levels_storyboard.png)
+
+---
