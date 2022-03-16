@@ -871,3 +871,15 @@ DONE
 ![boards](WIP/demo_levels_storyboard.png)
 
 ---
+
+## Session 045
+### 70 mins
+
+TODO
+- Redesign demo levels
+
+DONE
+
+![boards](WIP/demo_levels_storyboard_rough.png)
+
+ - Made crisp map outlines ready for exporting
